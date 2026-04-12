@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f6f3ec;
+  --ink: #14120f;
+  --slate: #2a3d4f;
+  --rust: #a34a28;
+  --sand: #d4c4a8;
+  --line: rgba(20, 18, 15, 0.12);
+  --glow: rgba(163, 74, 40, 0.15);
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-slate: var(--slate);
+  --color-rust: var(--rust);
+  --color-sand: var(--sand);
+  --font-sans: var(--font-newsreader);
+  --font-mono: var(--font-ibm-plex-mono);
+}
+
+@utility font-display {
+  font-family: var(--font-syne), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-newsreader), ui-serif, Georgia, serif;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--rust) 35%, transparent);
+  color: var(--ink);
+}
+
+.grid-tech {
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.noise {
+  position: relative;
+}
+.noise::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
