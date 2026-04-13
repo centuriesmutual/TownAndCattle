@@ -20,7 +20,7 @@ export function SiteJsonLd() {
       contactType: "customer service",
       url: `${SITE_URL}/#contact`,
       areaServed: "US",
-      availableLanguage: ["English", "German"],
+      availableLanguage: ["English"],
     },
     sameAs: [
       "https://github.com/centuriesmutual/TownAndCattle",

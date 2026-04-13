@@ -3,10 +3,11 @@ export const SITE_URL = "https://townandcattle.com";
 
 /** 1200×630 crop for Open Graph / Twitter */
 export const OG_IMAGE_URL =
-  "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&h=630&q=80";
+  "https://images.unsplash.com/photo-1603048297172-f57e29b13edf?auto=format&fit=crop&w=1200&h=630&q=88";
 
+/** Hero: bright, professional USDA-grade beef photography */
 export const HERO_IMAGE_URL =
-  "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=2000&q=80";
+  "https://images.unsplash.com/photo-1603048297172-f57e29b13edf?auto=format&fit=crop&w=2400&q=88";
 
 export type MarketProduct = {
   name: string;
@@ -39,7 +40,7 @@ export const MARKET_PRODUCTS: MarketProduct[] = [
     ranch: "Red River Cattle Co.",
     price: "62.00",
     priceCurrency: "USD",
-    grade: "Premium Choice+",
+    grade: "USDA Choice",
     sku: "tc-filet-pair",
     image:
       "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=80",
@@ -51,7 +52,7 @@ export const MARKET_PRODUCTS: MarketProduct[] = [
     ranch: "Caprock Heritage Beef",
     price: "12.00",
     priceCurrency: "USD",
-    grade: "Angus verified",
+    grade: "USDA Choice",
     sku: "tc-brisket-packer",
     image:
       "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=900&q=80",
@@ -63,7 +64,7 @@ export const MARKET_PRODUCTS: MarketProduct[] = [
     ranch: "West Texas Prime",
     price: "39.00",
     priceCurrency: "USD",
-    grade: "Dry-aged 21d",
+    grade: "USDA Prime",
     sku: "tc-strip-bundle",
     image:
       "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=900&q=80",

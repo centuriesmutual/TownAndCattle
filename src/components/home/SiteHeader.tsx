@@ -4,10 +4,11 @@ import Link from "next/link";
 import { useCallback, useEffect, useId, useState } from "react";
 
 const nav = [
+  { label: "Shoppers", href: "#for-shoppers" },
+  { label: "Ranchers", href: "#ranchers" },
   { label: "How it works", href: "#how-it-works" },
-  { label: "Why us", href: "#why-us" },
   { label: "Shop", href: "#shop" },
-  { label: "Suppliers", href: "#suppliers" },
+  { label: "Why us", href: "#why-us" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -31,37 +32,28 @@ export function SiteHeader() {
   }, [open, close]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-stahl/40 bg-talgschwarz/95 backdrop-blur-md">
-      <div className="relative mx-auto flex max-w-6xl items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        {/* Logo + horizontal rules (Ordnung) */}
-        <div className="flex min-w-0 flex-1 items-center gap-3 sm:gap-4">
-          <span
-            className="hidden h-px flex-1 bg-gradient-to-r from-transparent to-stahl/50 sm:block sm:max-w-[4rem] lg:max-w-[6rem]"
-            aria-hidden
-          />
+    <header className="sticky top-0 z-50 border-b border-wf-border bg-wf-white/95 backdrop-blur-md">
+      <div className="relative mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <div className="flex min-w-0 flex-1 items-center gap-3">
           <Link
             href="/"
-            className="tc-tap group relative shrink-0 font-display text-lg font-semibold tracking-tight text-kreide sm:text-xl"
+            className="tc-tap group relative shrink-0 font-display text-lg font-semibold tracking-tight text-wf-ink sm:text-xl"
           >
-            <span className="text-mesquite">Town</span>
-            <span className="text-kreide">&</span>
-            <span className="text-kreide">Cattle</span>
+            <span className="text-wf-green">Town</span>
+            <span className="text-wf-ink">&</span>
+            <span className="text-wf-ink">Cattle</span>
           </Link>
-          <span
-            className="hidden h-px flex-1 bg-gradient-to-l from-transparent to-stahl/50 sm:block sm:max-w-[4rem] lg:max-w-[6rem]"
-            aria-hidden
-          />
         </div>
 
         <nav
-          className="hidden items-center gap-1 lg:flex"
+          className="hidden items-center gap-0.5 lg:flex"
           aria-label="Primary"
         >
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="tc-tap rounded-md px-3 py-2 text-sm font-medium text-kreide/80 transition hover:bg-eichenbraun/40 hover:text-kreide"
+              className="tc-tap rounded-full px-3 py-2 text-sm font-medium text-wf-muted transition hover:bg-wf-sage hover:text-wf-ink"
             >
               {item.label}
             </Link>
@@ -71,13 +63,13 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <Link
             href="#shop"
-            className="tc-tap hidden rounded-md bg-mesquite px-5 text-sm font-semibold text-talgschwarz transition hover:bg-mesquite/90 sm:inline-flex"
+            className="tc-tap hidden rounded-full bg-wf-green px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-wf-green-hover sm:inline-flex"
           >
             Shop now
           </Link>
           <button
             type="button"
-            className="tc-tap rounded-md border border-stahl/50 p-2 text-kreide lg:hidden"
+            className="tc-tap rounded-full border border-wf-border p-2 text-wf-ink lg:hidden"
             aria-expanded={open}
             aria-controls={panelId}
             aria-label={open ? "Close menu" : "Open menu"}
@@ -109,13 +101,13 @@ export function SiteHeader() {
 
       {open && (
         <div
-          className="tc-drawer-backdrop fixed inset-0 z-40 bg-talgschwarz/80 lg:hidden"
+          className="tc-drawer-backdrop fixed inset-0 z-40 bg-wf-ink/40 lg:hidden"
           role="presentation"
           onClick={close}
         >
           <div
             id={panelId}
-            className="tc-drawer-panel border-b border-stahl/40 bg-eichenbraun shadow-xl"
+            className="tc-drawer-panel border-b border-wf-border bg-wf-white shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
             <nav className="flex max-h-[min(70vh,28rem)] flex-col overflow-y-auto px-4 py-4 tc-scroll-touch" aria-label="Mobile">
@@ -123,7 +115,7 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="tc-tap border-b border-stahl/20 py-3 text-base font-medium text-kreide"
+                  className="tc-tap rounded-xl py-3 text-base font-medium text-wf-ink"
                   onClick={close}
                 >
                   {item.label}
@@ -131,7 +123,7 @@ export function SiteHeader() {
               ))}
               <Link
                 href="#shop"
-                className="tc-tap mt-4 rounded-md bg-mesquite py-3 text-center text-sm font-bold text-talgschwarz"
+                className="tc-tap mt-4 rounded-full bg-wf-green py-3 text-center text-sm font-bold text-white"
                 onClick={close}
               >
                 Shop now

@@ -1,23 +1,37 @@
 @import "tailwindcss";
 
-/* German–Texas fusion: Talgschwarz, Eichenbraun, Mesquite Amber, Kreide, Blutrot, Stahl */
+/* Whole Foods–inspired: forest greens, sage, cream, rounded professional UI */
 :root {
-  --talgschwarz: #1a1410;
-  --eichenbraun: #5c3d1e;
-  --mesquite: #c17d3c;
-  --kreide: #f0ead6;
-  --blutrot: #8b1a1a;
-  --stahl: #4a4a4a;
-  --linen-noise: rgba(240, 234, 214, 0.03);
+  --wf-ink: #0d3b30;
+  --wf-ink-deep: #082922;
+  --wf-green: #0f766e;
+  --wf-green-hover: #0d9488;
+  --wf-green-light: #5eead4;
+  --wf-sage: #e4f0eb;
+  --wf-sage-deep: #d0e4d9;
+  --wf-cream: #f5f7f4;
+  --wf-white: #ffffff;
+  --wf-border: #c5d9cf;
+  --wf-text: #1a2e28;
+  --wf-muted: #5c6f69;
+  --wf-price: #9a3412;
+  --linen-noise: rgba(13, 59, 48, 0.02);
 }
 
 @theme inline {
-  --color-talgschwarz: var(--talgschwarz);
-  --color-eichenbraun: var(--eichenbraun);
-  --color-mesquite: var(--mesquite);
-  --color-kreide: var(--kreide);
-  --color-blutrot: var(--blutrot);
-  --color-stahl: var(--stahl);
+  --color-wf-ink: var(--wf-ink);
+  --color-wf-ink-deep: var(--wf-ink-deep);
+  --color-wf-green: var(--wf-green);
+  --color-wf-green-hover: var(--wf-green-hover);
+  --color-wf-green-light: var(--wf-green-light);
+  --color-wf-sage: var(--wf-sage);
+  --color-wf-sage-deep: var(--wf-sage-deep);
+  --color-wf-cream: var(--wf-cream);
+  --color-wf-white: var(--wf-white);
+  --color-wf-border: var(--wf-border);
+  --color-wf-text: var(--wf-text);
+  --color-wf-muted: var(--wf-muted);
+  --color-wf-price: var(--wf-price);
   --font-sans: var(--font-sans);
 }
 
@@ -30,8 +44,8 @@ html {
 }
 
 .tc-body {
-  background: var(--talgschwarz);
-  color: var(--kreide);
+  background: var(--wf-cream);
+  color: var(--wf-text);
   font-family: var(--font-sans), system-ui, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
@@ -44,11 +58,10 @@ html {
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--mesquite) 35%, transparent);
-  color: var(--talgschwarz);
+  background: color-mix(in oklab, var(--wf-green) 22%, transparent);
+  color: var(--wf-ink-deep);
 }
 
-/* Dark linen / kraft noise */
 .texture-linen {
   position: relative;
 }
@@ -57,26 +70,10 @@ html {
   pointer-events: none;
   position: absolute;
   inset: 0;
-  opacity: 0.055;
+  opacity: 0.04;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Ledger grid (Ordnung) */
-.ledger-grid {
-  background-image:
-    linear-gradient(
-      color-mix(in oklab, var(--stahl) 25%, transparent) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      color-mix(in oklab, var(--stahl) 20%, transparent) 1px,
-      transparent 1px
-    );
-  background-size: 24px 24px;
-}
-
-/* Scroll progress (Mission 2 + 3) */
 .scroll-progress-track {
   position: fixed;
   top: 0;
@@ -84,32 +81,34 @@ html {
   right: 0;
   z-index: 100;
   height: 3px;
-  background: color-mix(in oklab, var(--talgschwarz) 40%, transparent);
+  background: color-mix(in oklab, var(--wf-ink) 12%, transparent);
   pointer-events: none;
 }
 
 .scroll-progress-bar {
   height: 100%;
   width: 100%;
-  background: linear-gradient(90deg, var(--mesquite), color-mix(in oklab, var(--mesquite) 70%, white));
+  background: linear-gradient(
+    90deg,
+    var(--wf-green),
+    var(--wf-green-hover)
+  );
   transform-origin: left center;
   transform: scaleX(var(--scroll-p, 0));
   will-change: transform;
 }
 
-/* Typography scale (Mission 2) */
 .tc-hero-title {
-  font-size: clamp(2rem, 5vw, 4.5rem);
-  line-height: 1.05;
+  font-size: clamp(2rem, 4.5vw, 3.75rem);
+  line-height: 1.08;
   letter-spacing: -0.02em;
 }
 
 .tc-section-title {
-  font-size: clamp(1.5rem, 3.5vw, 2.75rem);
-  line-height: 1.12;
+  font-size: clamp(1.5rem, 3.2vw, 2.5rem);
+  line-height: 1.15;
 }
 
-/* Tap targets ≥ 44px */
 .tc-tap {
   min-height: 44px;
   min-width: 44px;
@@ -118,21 +117,19 @@ html {
   justify-content: center;
 }
 
-/* Horizontal scroll smooth iOS */
 .tc-scroll-touch {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Wax seal pulse — hover-capable devices only */
 @keyframes wax-pulse {
   0%,
   100% {
-    opacity: 0.35;
+    opacity: 0.45;
     transform: scale(1);
   }
   50% {
-    opacity: 0.85;
-    transform: scale(1.08);
+    opacity: 0.95;
+    transform: scale(1.06);
   }
 }
 
@@ -142,7 +139,6 @@ html {
   }
 }
 
-/* Scroll reveals */
 @keyframes tc-reveal {
   from {
     opacity: 0;
@@ -197,22 +193,20 @@ html {
   }
 }
 
-/* Butcher card lift */
 .tc-butcher-card {
   transition:
-    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.35s ease,
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
     border-color 0.25s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .tc-butcher-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(13, 59, 48, 0.12);
   }
 }
 
-/* Mobile drawer */
 .tc-drawer-backdrop {
   animation: fade-in 0.25s ease both;
 }

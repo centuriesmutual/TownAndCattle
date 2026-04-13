@@ -49,17 +49,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Town & Cattle — Ranch to Table. No Middleman.",
     description:
-      "Buy premium beef online from verified ranchers. Grass-fed and ranch-direct cuts, fair pricing, traceable sourcing—Hill Country craft meets German precision.",
+      "Buy premium beef online from verified ranchers. USDA Prime and Choice cuts, fair per-pound pricing, traceable sourcing—professional marketplace standards.",
     url: "https://townandcattle.com",
     siteName: "Town & Cattle",
     type: "website",
     locale: "en_US",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&h=630&q=80",
+        url: "https://images.unsplash.com/photo-1603048297172-f57e29b13edf?auto=format&fit=crop&w=1200&h=630&q=88",
         width: 1200,
         height: 630,
-        alt: "Premium marbled beef—Town and Cattle ranch-direct marketplace hero image",
+        alt: "USDA graded premium beef—Town and Cattle ranch-direct marketplace",
       },
     ],
   },
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     description:
       "Buy premium beef online. Grass-fed beef direct from ranch, best prices, order ranch beef with traceability.",
     images: [
-      "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&h=630&q=80",
+      "https://images.unsplash.com/photo-1603048297172-f57e29b13edf?auto=format&fit=crop&w=1200&h=630&q=88",
     ],
     site: "@townandcattle",
     creator: "@townandcattle",
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#1A1410",
+  themeColor: "#0d3b30",
 };
 
 export default function RootLayout({
