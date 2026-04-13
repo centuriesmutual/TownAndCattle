@@ -1,71 +1,53 @@
+import Image from "next/image";
 import Link from "next/link";
+
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=2000&q=80";
 
 export function Hero() {
   return (
-    <section className="farm-hero relative overflow-hidden">
-      <div className="farm-scene" aria-hidden="true">
-        <div className="farm-sun" />
-        <div className="farm-cloud farm-cloud-1" />
-        <div className="farm-cloud farm-cloud-2" />
-        <div className="farm-cloud farm-cloud-3" />
-        <div className="farm-grass-strip" />
-      </div>
+    <section className="relative min-h-[88vh] overflow-hidden border-b border-white/10">
+      <Image
+        src={HERO_IMAGE}
+        alt="Premium beef on the grill—hero imagery for Town and Cattle"
+        fill
+        priority
+        className="object-cover object-center"
+        sizes="100vw"
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-void via-void/90 to-void/55"
+        aria-hidden
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-void/80 via-transparent to-void/40" />
 
-      <div className="relative z-[1] mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
-        <div className="noise hero-animate max-w-3xl rounded-2xl border border-ink/10 bg-white/60 p-8 shadow-[0_1px_0_rgba(255,255,255,0.65)_inset] backdrop-blur-sm sm:p-10">
-          <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-slate">
-            Flagship domain · Multi-tenant commerce
+      <div className="relative z-[1] mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-end px-4 pb-16 pt-28 sm:px-6 sm:pb-20 lg:px-8 lg:pb-28">
+        <div className="max-w-2xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-amber">
+            Direct from the ranch
           </p>
-          <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-5xl lg:text-6xl">
-            The digital stockyard for modern trade.
+          <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-6xl">
+            Premium beef from ranchers, at prices that cut out the middleman.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/75">
-            TownAndCattle.com is the town square of a rule-driven ecosystem: one
-            disciplined backend, many branded storefronts, and the same ledger-grade
-            rigor you expect from precision engineering—carried out with the
-            handshake clarity of a Texas cattle market.
+          <p className="mt-6 text-lg leading-relaxed text-ink/75">
+            Better quality, traceable sourcing, and competitive pricing—because
+            we connect you straight to producers who stand behind every cut.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
-              href="#architecture"
-              className="inline-flex items-center justify-center rounded-md bg-rust px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-rust/90"
+              href="#shop"
+              className="inline-flex items-center justify-center rounded-md bg-amber px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-void shadow-lg shadow-amber/20 transition hover:bg-amber/90"
             >
-              See the system map
+              Browse the market
             </Link>
             <Link
-              href="#domains"
-              className="inline-flex items-center justify-center rounded-md border border-ink/15 bg-paper/90 px-6 py-3 text-sm font-semibold text-ink transition hover:border-ink/25"
+              href="#how-it-works"
+              className="inline-flex items-center justify-center rounded-md border border-white/25 bg-white/5 px-8 py-3.5 text-sm font-semibold text-ink backdrop-blur-sm transition hover:border-amber/40 hover:bg-white/10"
             >
-              Explore domain corrals
+              How it works
             </Link>
-            <span className="hidden font-mono text-[11px] text-ink/45 sm:ml-2 sm:inline">
-              Frontend preview · API not connected
-            </span>
           </div>
         </div>
-
-        <dl className="mt-10 grid gap-4 sm:grid-cols-3">
-          {[
-            {
-              k: "Routing decisions",
-              v: "APPROVE · BLOCK · VERIFY · REDIRECT_PRODUCT",
-            },
-            { k: "Settlement", v: "Coinbase Commerce · hosted checkout" },
-            { k: "Analytics posture", v: "Event stream → warehouse marts" },
-          ].map((row) => (
-            <div
-              key={row.k}
-              className="scroll-reveal-card rounded-xl border border-ink/10 bg-white/50 p-4 shadow-sm backdrop-blur-sm"
-            >
-              <dt className="font-mono text-[10px] uppercase tracking-widest text-slate">
-                {row.k}
-              </dt>
-              <dd className="mt-2 text-sm font-medium leading-snug text-ink">
-                {row.v}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   );

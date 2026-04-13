@@ -1,35 +1,28 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Newsreader, Syne } from "next/font/google";
+import { DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const syne = Syne({
-  variable: "--font-syne",
+const playfair = Playfair_Display({
+  variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
 });
 
-const newsreader = Newsreader({
-  variable: "--font-newsreader",
+const dmSans = DM_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const ibmMono = IBM_Plex_Mono({
-  variable: "--font-ibm-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Town & Cattle — The Digital Stockyard",
+  title: "Town & Cattle — Premium Beef, Direct from Ranchers",
   description:
-    "A multi-domain commerce and identity ecosystem by Centuries Mutual, LLC. Centralized trust, deterministic routing, and modern settlement—built with the discipline of German engineering and the plainspoken integrity of the Texas stockyard.",
+    "Shop premium beef direct from verified ranchers. Traceable sourcing, fair pricing without middleman markup, delivered to your door. Centuries Mutual, LLC.",
   metadataBase: new URL("https://townandcattle.com"),
   openGraph: {
-    title: "Town & Cattle — The Digital Stockyard",
+    title: "Town & Cattle — Premium Beef Marketplace",
     description:
-      "One backend. Many storefronts. Rule-driven commerce across townandcattle.com and partner domains.",
+      "Better quality beef from the source. Competitive prices. Confidence in every cut.",
     siteName: "Town & Cattle",
     type: "website",
   },
@@ -43,11 +36,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${newsreader.variable} ${ibmMono.variable} h-full antialiased`}
+      className={`${playfair.variable} ${dmSans.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="farm-site min-h-full flex flex-col text-ink">
-        {children}
-      </body>
+      <body className="tc-body flex min-h-full flex-col">{children}</body>
     </html>
   );
 }

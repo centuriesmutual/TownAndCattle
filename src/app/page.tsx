@@ -1,12 +1,11 @@
-import { ArchitecturePreview } from "@/components/home/ArchitecturePreview";
-import { CTASection } from "@/components/home/CTASection";
-import { DomainCorrals } from "@/components/home/DomainCorrals";
-import { FlowSteps } from "@/components/home/FlowSteps";
+import { FeaturedProducts } from "@/components/home/FeaturedProducts";
 import { Hero } from "@/components/home/Hero";
+import { HowItWorks } from "@/components/home/HowItWorks";
 import { SiteFooter } from "@/components/home/SiteFooter";
 import { SiteHeader } from "@/components/home/SiteHeader";
-import { StatsBar } from "@/components/home/StatsBar";
-import { TrustSection } from "@/components/home/TrustSection";
+import { SuppliersSection } from "@/components/home/SuppliersSection";
+import { Testimonials } from "@/components/home/Testimonials";
+import { WhySection } from "@/components/home/WhySection";
 
 export default function Home() {
   return (
@@ -14,12 +13,11 @@ export default function Home() {
       <SiteHeader />
       <main className="flex-1">
         <Hero />
-        <StatsBar />
-        <FlowSteps />
-        <DomainCorrals />
-        <ArchitecturePreview />
-        <TrustSection />
-        <CTASection />
+        <HowItWorks />
+        <WhySection />
+        <FeaturedProducts />
+        <SuppliersSection />
+        <Testimonials />
       </main>
       <SiteFooter />
     </>
