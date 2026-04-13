@@ -96,6 +96,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://login.coinbase.com" crossOrigin="" />
       </head>
       <body className="tc-body flex min-h-full flex-col">
         {children}

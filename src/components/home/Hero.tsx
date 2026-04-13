@@ -54,10 +54,10 @@ export function Hero() {
               Shop premium cuts
             </Link>
             <Link
-              href="#how-it-works"
+              href="/the-ranch"
               className="tc-tap w-full justify-center rounded-full border-2 border-white/50 bg-white/10 px-8 text-center text-sm font-semibold text-white backdrop-blur-sm transition hover:border-white hover:bg-white/20 sm:w-auto"
             >
-              How it works
+              The Ranch
             </Link>
           </div>
           <p className="mt-8 text-xs font-medium uppercase tracking-wider text-white/55">

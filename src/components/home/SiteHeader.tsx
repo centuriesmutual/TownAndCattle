@@ -4,12 +4,13 @@ import Link from "next/link";
 import { useCallback, useEffect, useId, useState } from "react";
 
 const nav = [
-  { label: "Shoppers", href: "#for-shoppers" },
-  { label: "Ranchers", href: "#ranchers" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Shop", href: "#shop" },
-  { label: "Why us", href: "#why-us" },
-  { label: "Contact", href: "#contact" },
+  { label: "The Ranch", href: "/the-ranch" },
+  { label: "Our Township", href: "/our-township" },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "Shop", href: "/#shop" },
+  { label: "Why us", href: "/#why-us" },
+  { label: "Account", href: "/create-account" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function SiteHeader() {
@@ -62,7 +63,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <Link
-            href="#shop"
+            href="/#shop"
             className="tc-tap hidden rounded-full bg-wf-green px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-wf-green-hover sm:inline-flex"
           >
             Shop now
@@ -122,7 +123,7 @@ export function SiteHeader() {
                 </Link>
               ))}
               <Link
-                href="#shop"
+                href="/#shop"
                 className="tc-tap mt-4 rounded-full bg-wf-green py-3 text-center text-sm font-bold text-white"
                 onClick={close}
               >
