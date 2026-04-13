@@ -41,18 +41,6 @@ export function HomeRanchersFullSection() {
           >
             View program overview
           </Link>
-          <Link
-            href="/our-township"
-            className="tc-tap justify-center rounded-md border-2 border-wf-border bg-wf-white px-10 py-3 text-sm font-semibold text-wf-ink transition hover:border-wf-green"
-          >
-            Our Township
-          </Link>
-          <Link
-            href="/#contact"
-            className="tc-tap justify-center py-3 text-sm font-semibold text-wf-green underline-offset-4 hover:underline"
-          >
-            Schedule an intro call
-          </Link>
         </div>
       </div>
     </section>
@@ -89,18 +77,6 @@ export function HomeCommerceFullSection() {
             className="tc-tap justify-center rounded-md border border-wf-green bg-wf-green px-10 py-3 text-sm font-semibold text-white transition hover:bg-wf-green-hover"
           >
             View commerce &amp; settlement
-          </Link>
-          <Link
-            href="/login"
-            className="tc-tap justify-center rounded-md border-2 border-wf-border bg-wf-cream px-10 py-3 text-sm font-semibold text-wf-ink transition hover:border-wf-green"
-          >
-            Log in
-          </Link>
-          <Link
-            href="/create-account"
-            className="tc-tap justify-center py-3 text-sm font-semibold text-wf-green underline-offset-4 hover:underline"
-          >
-            Create account
           </Link>
         </div>
       </div>

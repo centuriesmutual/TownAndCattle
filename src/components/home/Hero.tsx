@@ -45,9 +45,6 @@ export function Hero() {
               The Ranch
             </Link>
           </div>
-          <p className="mt-8 text-xs font-medium uppercase tracking-wider text-wf-muted">
-            No retail markup games · Cold-chain fulfillment · Coinbase or card
-          </p>
         </div>
       </div>
 

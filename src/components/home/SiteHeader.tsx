@@ -22,19 +22,6 @@ export function SiteHeader({ isLoggedIn, displayName }: SiteHeaderProps) {
           aria-label="Primary"
           className="flex flex-wrap items-center justify-end gap-2 sm:gap-3"
         >
-          <Link
-            href="/market"
-            className="tc-tap rounded-md border border-transparent px-3 py-2 text-sm font-semibold text-wf-ink transition hover:border-wf-border hover:text-wf-green"
-          >
-            Farmers market
-          </Link>
-          <Link
-            href="/the-ranch"
-            className="tc-tap hidden rounded-md px-3 py-2 text-sm font-semibold text-wf-muted transition hover:text-wf-green sm:inline-flex"
-          >
-            The Ranch
-          </Link>
-
           {isLoggedIn ? (
             <>
               <Link
