@@ -9,6 +9,10 @@ export const OG_IMAGE_URL =
 export const HERO_IMAGE_URL =
   "https://images.unsplash.com/photo-1603048297172-f57e29b13edf?auto=format&fit=crop&w=2400&q=88";
 
+/** Framed hero card (distinct from full-bleed background) */
+export const HERO_CARD_IMAGE_URL =
+  "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=88";
+
 export type MarketProduct = {
   name: string;
   description: string;

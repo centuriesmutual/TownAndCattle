@@ -65,12 +65,12 @@ export function TheRanchContent() {
         >
           Browse featured cuts
         </Link>
-        <Link
-          href="/#how-it-works"
-          className="tc-tap justify-center rounded-full border-2 border-wf-green bg-transparent px-10 text-sm font-semibold text-wf-green transition hover:bg-wf-green/10"
-        >
-          See how ordering works
-        </Link>
+          <Link
+            href="/the-range"
+            className="tc-tap justify-center rounded-full border-2 border-wf-green bg-transparent px-10 text-sm font-semibold text-wf-green transition hover:bg-wf-green/10"
+          >
+            The Range — how we operate
+          </Link>
       </div>
 
       <div className="mt-10 flex flex-col gap-4 border-t border-wf-border pt-10 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-8 lg:justify-start">
@@ -90,12 +90,12 @@ export function TheRanchContent() {
         >
           USDA.gov resources →
         </a>
-        <Link
-          href="/#why-us"
-          className="tc-tap text-sm font-semibold text-wf-muted underline-offset-4 hover:text-wf-ink hover:underline"
-        >
-          Why Town &amp; Cattle
-        </Link>
+          <Link
+            href="/our-township"
+            className="tc-tap text-sm font-semibold text-wf-muted underline-offset-4 hover:text-wf-ink hover:underline"
+          >
+            Supplier program
+          </Link>
       </div>
 
       <div className="mt-14 grid grid-cols-2 gap-4 border-t border-wf-border pt-10 sm:grid-cols-4 sm:gap-6">

@@ -68,6 +68,12 @@ export async function AccountCtaSection() {
             >
               Open full sign-up workflow
             </Link>
+            <Link
+              href="/login"
+              className="tc-tap justify-center rounded-full border-2 border-wf-border px-10 text-sm font-semibold text-wf-ink transition hover:border-wf-green"
+            >
+              Log in
+            </Link>
           </div>
 
           {!oauthReady && (
