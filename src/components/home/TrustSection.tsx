@@ -15,8 +15,11 @@ const pillars = [
 
 export function TrustSection() {
   return (
-    <section id="trust" className="border-b border-ink/10 py-16 sm:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section
+      id="trust"
+      className="farm-bg-barn scroll-reveal relative border-b border-ink/10 py-16 sm:py-20"
+    >
+      <div className="relative z-[1] mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-slate">

@@ -2,13 +2,17 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-ink/10">
-      <div className="pointer-events-none absolute inset-0 grid-tech opacity-40" />
-      <div className="pointer-events-none absolute -right-24 top-12 h-72 w-72 rounded-full bg-rust/20 blur-3xl" />
-      <div className="pointer-events-none absolute -left-16 bottom-0 h-64 w-64 rounded-full bg-slate/15 blur-3xl" />
+    <section className="farm-hero relative overflow-hidden">
+      <div className="farm-scene" aria-hidden="true">
+        <div className="farm-sun" />
+        <div className="farm-cloud farm-cloud-1" />
+        <div className="farm-cloud farm-cloud-2" />
+        <div className="farm-cloud farm-cloud-3" />
+        <div className="farm-grass-strip" />
+      </div>
 
-      <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
-        <div className="noise max-w-3xl rounded-2xl border border-ink/10 bg-white/55 p-8 shadow-[0_1px_0_rgba(255,255,255,0.6)_inset] backdrop-blur-sm sm:p-10">
+      <div className="relative z-[1] mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+        <div className="noise hero-animate max-w-3xl rounded-2xl border border-ink/10 bg-white/60 p-8 shadow-[0_1px_0_rgba(255,255,255,0.65)_inset] backdrop-blur-sm sm:p-10">
           <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-slate">
             Flagship domain · Multi-tenant commerce
           </p>
@@ -30,7 +34,7 @@ export function Hero() {
             </Link>
             <Link
               href="#domains"
-              className="inline-flex items-center justify-center rounded-md border border-ink/15 bg-paper px-6 py-3 text-sm font-semibold text-ink transition hover:border-ink/25"
+              className="inline-flex items-center justify-center rounded-md border border-ink/15 bg-paper/90 px-6 py-3 text-sm font-semibold text-ink transition hover:border-ink/25"
             >
               Explore domain corrals
             </Link>
@@ -51,7 +55,7 @@ export function Hero() {
           ].map((row) => (
             <div
               key={row.k}
-              className="rounded-xl border border-ink/10 bg-white/40 p-4 backdrop-blur-sm"
+              className="scroll-reveal-card rounded-xl border border-ink/10 bg-white/50 p-4 shadow-sm backdrop-blur-sm"
             >
               <dt className="font-mono text-[10px] uppercase tracking-widest text-slate">
                 {row.k}

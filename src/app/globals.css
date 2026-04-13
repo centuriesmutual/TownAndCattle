@@ -8,6 +8,11 @@
   --sand: #d4c4a8;
   --line: rgba(20, 18, 15, 0.12);
   --glow: rgba(163, 74, 40, 0.15);
+  --sky-top: #b8d4e8;
+  --sky-mid: #e8d8c4;
+  --field: #5c7a4e;
+  --field-light: #8faa6b;
+  --wheat: #c9b896;
 }
 
 @theme inline {
@@ -28,7 +33,26 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+body.farm-site {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(
+      120% 80% at 50% -10%,
+      color-mix(in oklab, var(--sky-top) 85%, white) 0%,
+      transparent 55%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--sky-mid) 40%, var(--paper)) 0%,
+      var(--paper) 28%,
+      color-mix(in oklab, var(--field-light) 12%, var(--paper)) 100%
+    );
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--font-newsreader), ui-serif, Georgia, serif;
+}
+
+body:not(.farm-site) {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-newsreader), ui-serif, Georgia, serif;
@@ -56,4 +80,392 @@ body {
   inset: 0;
   opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* —— Farm hero scene —— */
+.farm-hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid color-mix(in oklab, var(--ink) 10%, transparent);
+  background: linear-gradient(
+    165deg,
+    color-mix(in oklab, var(--sky-top) 55%, white) 0%,
+    color-mix(in oklab, var(--sky-mid) 35%, var(--paper)) 42%,
+    color-mix(in oklab, var(--field-light) 22%, var(--paper)) 72%,
+    color-mix(in oklab, var(--field) 18%, var(--paper)) 100%
+  );
+}
+
+.farm-hero::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.14;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200' preserveAspectRatio='none'%3E%3Cpath fill='%232a3d4f' d='M0 120 Q200 60 400 100 T800 85 T1200 95 L1200 200 L0 200 Z'/%3E%3Cpath fill='%235c7a4e' d='M0 145 Q300 100 600 130 T1200 115 L1200 200 L0 200 Z'/%3E%3C/svg%3E");
+  background-size: 100% 38%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.farm-scene {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.farm-sun {
+  position: absolute;
+  top: 8%;
+  right: 12%;
+  width: min(18vw, 7rem);
+  height: min(18vw, 7rem);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 35%,
+    #fff6e8 0%,
+    #f0c9a0 45%,
+    #e8a86a 100%
+  );
+  box-shadow:
+    0 0 40px color-mix(in oklab, #f0c9a0 55%, transparent),
+    0 0 80px color-mix(in oklab, var(--rust) 25%, transparent);
+}
+
+.farm-cloud {
+  position: absolute;
+  border-radius: 9999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.45) 100%
+  );
+  filter: blur(0.5px);
+  opacity: 0.85;
+}
+
+.farm-cloud-1 {
+  top: 10%;
+  left: 5%;
+  width: 140px;
+  height: 36px;
+  animation: cloud-drift 72s linear infinite;
+}
+
+.farm-cloud-2 {
+  top: 18%;
+  left: 35%;
+  width: 100px;
+  height: 28px;
+  animation: cloud-drift 96s linear infinite reverse;
+  animation-delay: -20s;
+}
+
+.farm-cloud-3 {
+  top: 8%;
+  left: 60%;
+  width: 120px;
+  height: 32px;
+  animation: cloud-drift 84s linear infinite;
+  animation-delay: -40s;
+}
+
+.farm-grass-strip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 22%;
+  background: linear-gradient(
+    0deg,
+    color-mix(in oklab, var(--field) 35%, transparent) 0%,
+    transparent 100%
+  );
+  background-size: 100% 100%;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.farm-grass-strip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background: repeating-linear-gradient(
+    95deg,
+    transparent 0,
+    transparent 3px,
+    color-mix(in oklab, var(--field) 45%, transparent) 3px,
+    color-mix(in oklab, var(--field) 45%, transparent) 4px
+  );
+  animation: grass-sway 5s ease-in-out infinite;
+}
+
+@keyframes cloud-drift {
+  0% {
+    transform: translateX(-12vw);
+  }
+  100% {
+    transform: translateX(12vw);
+  }
+}
+
+@keyframes grass-sway {
+  0%,
+  100% {
+    transform: skewX(0deg);
+  }
+  50% {
+    transform: skewX(1.2deg);
+  }
+}
+
+@keyframes sun-glow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 0.92;
+  }
+}
+
+@keyframes star-twinkle {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(2.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.75rem) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-animate {
+  animation: hero-card-in 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .farm-cloud-1,
+  .farm-cloud-2,
+  .farm-cloud-3,
+  .farm-grass-strip::before,
+  .farm-sun {
+    animation: none !important;
+  }
+
+  .hero-animate {
+    animation: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .farm-sun {
+    animation: sun-glow 10s ease-in-out infinite;
+  }
+}
+
+/* Scroll-driven section reveals (Chrome / Edge / Safari 18+) */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-reveal {
+      animation: reveal-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view(block);
+      animation-range: entry 0% entry 45%;
+    }
+
+    .scroll-reveal-wide {
+      animation: reveal-up 0.95s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view(block);
+      animation-range: entry 5% entry 55%;
+    }
+
+    .scroll-reveal-card:nth-child(1) {
+      animation: reveal-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view(block);
+      animation-range: entry 0% entry 40%;
+    }
+    .scroll-reveal-card:nth-child(2) {
+      animation: reveal-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view(block);
+      animation-range: entry 4% entry 44%;
+    }
+    .scroll-reveal-card:nth-child(3) {
+      animation: reveal-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view(block);
+      animation-range: entry 8% entry 48%;
+    }
+    .scroll-reveal-card:nth-child(4) {
+      animation: reveal-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view(block);
+      animation-range: entry 12% entry 52%;
+    }
+    .scroll-reveal-card:nth-child(5) {
+      animation: reveal-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view(block);
+      animation-range: entry 16% entry 56%;
+    }
+  }
+}
+
+/* Section backgrounds */
+.farm-bg-furrows {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--wheat) 28%, var(--paper)) 0%,
+    var(--paper) 100%
+  );
+}
+.farm-bg-furrows::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background: repeating-linear-gradient(
+    92deg,
+    transparent 0,
+    transparent 18px,
+    color-mix(in oklab, var(--field) 35%, transparent) 18px,
+    color-mix(in oklab, var(--field) 35%, transparent) 19px
+  );
+}
+
+.farm-bg-pasture {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--field-light) 14%, var(--paper)) 0%,
+    var(--paper) 100%
+  );
+}
+.farm-bg-pasture::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  background-image: radial-gradient(
+      circle at 20% 30%,
+      color-mix(in oklab, var(--field) 22%, transparent) 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 60%,
+      color-mix(in oklab, var(--field-light) 25%, transparent) 0%,
+      transparent 40%
+    );
+}
+
+.farm-bg-night {
+  position: relative;
+  background: linear-gradient(
+    165deg,
+    #0f1419 0%,
+    #1a2330 40%,
+    #1e2a1f 100%
+  ) !important;
+  color: var(--paper);
+}
+.farm-bg-night::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+  background-image: radial-gradient(1.5px 1.5px at 10% 20%, white, transparent),
+    radial-gradient(1.5px 1.5px at 30% 8%, white, transparent),
+    radial-gradient(1px 1px at 55% 15%, white, transparent),
+    radial-gradient(1.5px 1.5px at 72% 22%, white, transparent),
+    radial-gradient(1px 1px at 88% 12%, white, transparent),
+    radial-gradient(1px 1px at 15% 40%, white, transparent),
+    radial-gradient(1.5px 1.5px at 40% 35%, white, transparent),
+    radial-gradient(1px 1px at 65% 38%, white, transparent),
+    radial-gradient(1.5px 1.5px at 90% 45%, white, transparent);
+  animation: star-twinkle 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .farm-bg-night::before {
+    animation: none;
+    opacity: 0.35;
+  }
+}
+
+.farm-bg-barn {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--rust) 8%, var(--paper)) 0%,
+    var(--paper) 100%
+  );
+}
+.farm-bg-barn::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background: repeating-linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--ink) 25%, transparent) 0,
+    color-mix(in oklab, var(--ink) 25%, transparent) 2px,
+    transparent 2px,
+    transparent 14px
+  );
+}
+
+.farm-band-stats {
+  position: relative;
+  background: linear-gradient(
+    120deg,
+    var(--slate) 0%,
+    color-mix(in oklab, var(--field) 25%, var(--slate)) 100%
+  ) !important;
+}
+.farm-band-stats::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-image: radial-gradient(
+    circle at 15% 50%,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 35%
+  );
+}
+
+.farm-cta-wrap {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--rust) 35%, var(--slate)) 0%,
+    var(--slate) 45%,
+    var(--ink) 100%
+  );
 }

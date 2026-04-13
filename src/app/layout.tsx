@@ -45,7 +45,9 @@ export default function RootLayout({
       lang="en"
       className={`${syne.variable} ${newsreader.variable} ${ibmMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-paper text-ink">{children}</body>
+      <body className="farm-site min-h-full flex flex-col text-ink">
+        {children}
+      </body>
     </html>
   );
 }

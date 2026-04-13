@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export function CTASection() {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="scroll-reveal py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl border border-ink/10 bg-gradient-to-br from-slate via-slate to-ink px-8 py-12 text-paper shadow-xl sm:px-12 sm:py-16">
+        <div className="farm-cta-wrap relative overflow-hidden rounded-3xl border border-white/15 px-8 py-12 text-paper shadow-xl sm:px-12 sm:py-16">
           <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-rust/40 blur-3xl" />
           <div className="relative max-w-2xl">
             <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-sand">

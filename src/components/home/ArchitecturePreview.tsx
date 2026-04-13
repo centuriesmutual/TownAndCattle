@@ -11,9 +11,9 @@ export function ArchitecturePreview() {
   return (
     <section
       id="architecture"
-      className="border-b border-ink/10 bg-ink text-paper py-16 sm:py-20"
+      className="farm-bg-night scroll-reveal-wide relative border-b border-white/10 py-16 text-paper sm:py-20"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-[1] mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-sand">
             System architecture

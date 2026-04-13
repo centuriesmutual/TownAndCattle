@@ -28,8 +28,8 @@ const steps = [
 
 export function FlowSteps() {
   return (
-    <section className="border-b border-ink/10 bg-paper py-16 sm:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section className="farm-bg-furrows scroll-reveal-wide relative border-b border-ink/10 py-16 sm:py-20">
+      <div className="relative z-[1] mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-slate">
             End-to-end trace
@@ -47,7 +47,7 @@ export function FlowSteps() {
           {steps.map((s) => (
             <li
               key={s.n}
-              className="group relative rounded-xl border border-ink/10 bg-white/70 p-6 shadow-sm transition hover:border-rust/30 hover:shadow-md"
+              className="scroll-reveal-card group relative rounded-xl border border-ink/10 bg-white/75 p-6 shadow-sm backdrop-blur-[2px] transition hover:border-rust/30 hover:shadow-md"
             >
               <span className="font-mono text-xs text-rust">{s.n}</span>
               <h3 className="mt-2 font-display text-lg font-semibold text-ink">

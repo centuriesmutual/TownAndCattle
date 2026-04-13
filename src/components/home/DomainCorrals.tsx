@@ -23,8 +23,11 @@ const domains = [
 
 export function DomainCorrals() {
   return (
-    <section id="domains" className="border-b border-ink/10 py-16 sm:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section
+      id="domains"
+      className="farm-bg-pasture scroll-reveal relative border-b border-ink/10 py-16 sm:py-20"
+    >
+      <div className="relative z-[1] mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-slate">
@@ -54,7 +57,7 @@ export function DomainCorrals() {
           {domains.map((d) => (
             <article
               key={d.slug}
-              className="flex flex-col rounded-2xl border border-ink/10 bg-gradient-to-b from-white/90 to-paper p-6 shadow-sm"
+              className="scroll-reveal-card flex flex-col rounded-2xl border border-ink/10 bg-gradient-to-b from-white/90 to-paper/95 p-6 shadow-sm backdrop-blur-[2px]"
             >
               <div className="flex items-center justify-between gap-2">
                 <span className="font-mono text-xs text-slate">{d.slug}</span>
