@@ -10,15 +10,17 @@ const links = [
 
 export function SiteFooter() {
   return (
-    <footer id="contact" className="bg-wf-bg">
-      <div className="border-b border-wf-border bg-wf-cream">
-        <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-20">
-          <h2 className="font-display text-3xl font-semibold tracking-tight text-wf-text sm:text-4xl">
+    <footer id="contact" className="bg-talgschwarz">
+      <div className="border-b border-mesquite/25 bg-eichenbraun/30">
+        <div className="mx-auto max-w-6xl px-4 py-14 text-center sm:px-6 sm:py-18 lg:px-8">
+          <p className="font-display text-2xl font-semibold text-mesquite sm:text-3xl">
+            Bestell heute. Iss besser morgen.
+          </p>
+          <h2 className="mt-2 font-display text-xl font-medium text-kreide sm:text-2xl">
             Order today. Eat better tomorrow.
           </h2>
-          <p className="mx-auto mt-3 max-w-lg text-wf-muted">
-            Drop your email for harvest alerts, limited cuts, and supplier
-            openings—no spam, just signal.
+          <p className="mx-auto mt-4 max-w-lg text-kreide/65">
+            Harvest alerts, limited cuts, supplier openings—one list, no noise.
           </p>
           <form
             className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row"
@@ -26,7 +28,7 @@ export function SiteFooter() {
             method="post"
           >
             <label htmlFor="footer-email" className="sr-only">
-              Email
+              Email for newsletter
             </label>
             <input
               id="footer-email"
@@ -35,51 +37,57 @@ export function SiteFooter() {
               required
               placeholder="you@example.com"
               autoComplete="email"
-              className="min-h-12 flex-1 rounded-full border border-wf-border bg-wf-bg px-5 text-sm text-wf-text placeholder:text-wf-muted/70 focus:border-wf-green focus:outline-none focus:ring-2 focus:ring-wf-green/25"
+              className="tc-tap min-h-12 flex-1 rounded-sm border border-stahl/50 bg-talgschwarz px-4 text-base text-kreide placeholder:text-kreide/35 focus:border-mesquite focus:outline-none focus:ring-1 focus:ring-mesquite/40"
             />
             <button
               type="submit"
-              className="min-h-12 rounded-full bg-wf-green px-8 text-sm font-semibold text-white transition hover:bg-wf-green-dark"
+              className="tc-tap min-h-12 rounded-sm bg-mesquite px-6 text-sm font-bold uppercase tracking-wide text-talgschwarz transition hover:bg-mesquite/90"
             >
               Subscribe
             </button>
           </form>
-          <p className="mt-3 text-xs text-wf-muted">
-            Demo form—wire your email provider when ready.
-          </p>
+          <p className="mt-2 text-xs text-kreide/45">Demo form—connect ESP when ready.</p>
         </div>
       </div>
 
-      <div className="bg-wf-green text-white">
-        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-10 border-b border-white/15 pb-10 md:flex-row md:justify-between">
-            <div>
-              <p className="font-display text-xl font-semibold">
-                Town<span className="text-white/90">&</span>Cattle
-              </p>
-              <p className="mt-2 max-w-xs text-sm text-white/75">
-                Premium beef marketplace by Centuries Mutual, LLC. United States.
-              </p>
-            </div>
-            <nav aria-label="Footer">
-              <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/85">
-                {links.map((l) => (
-                  <li key={l.href}>
-                    <Link
-                      href={l.href}
-                      className="transition hover:text-white hover:underline"
-                    >
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-10 border-b border-stahl/30 pb-10 md:flex-row md:justify-between">
+          <div>
+            <p className="font-display text-xl font-semibold text-kreide">
+              Town<span className="text-mesquite">&</span>Cattle
+            </p>
+            <p className="mt-2 max-w-sm text-sm text-kreide/55">
+              Premium beef marketplace · Centuries Mutual, LLC
+            </p>
+            <p className="mt-6 inline-block border border-dashed border-mesquite/50 px-3 py-2 font-sans text-[10px] font-bold uppercase tracking-[0.25em] text-mesquite">
+              Seit 2024 · Fredericksburg, Texas
+            </p>
           </div>
-          <div className="flex flex-col gap-2 pt-8 text-xs text-white/60 sm:flex-row sm:justify-between">
-            <p>© {new Date().getFullYear()} Centuries Mutual, LLC</p>
-            <p>townandcattle.com</p>
-          </div>
+          <nav aria-label="Footer">
+            <ul className="flex flex-col gap-2 text-sm text-kreide/65 sm:flex-row sm:flex-wrap sm:gap-x-6">
+              {links.map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="tc-tap inline-flex rounded-sm px-1 py-2 hover:text-kreide hover:underline"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+        <div className="flex flex-col gap-2 pt-8 text-xs text-kreide/45 sm:flex-row sm:justify-between">
+          <p>© {new Date().getFullYear()} Centuries Mutual, LLC</p>
+          <p>
+            <a
+              href="https://townandcattle.com"
+              className="underline-offset-2 hover:underline"
+            >
+              townandcattle.com
+            </a>
+          </p>
         </div>
       </div>
     </footer>

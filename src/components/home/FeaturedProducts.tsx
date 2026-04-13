@@ -1,101 +1,112 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const products = [
-  {
-    name: "Ribeye, bone-in",
-    ranch: "Llano Estacado Ranch",
-    price: "$48/lb",
-    grade: "USDA Prime",
-    img: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    name: "Filet mignon pair",
-    ranch: "Red River Cattle Co.",
-    price: "$62/lb",
-    grade: "Premium Choice+",
-    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    name: "Brisket whole packer",
-    ranch: "Caprock Heritage Beef",
-    price: "$12/lb",
-    grade: "Angus verified",
-    img: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    name: "Strip steak bundle",
-    ranch: "West Texas Prime",
-    price: "$39/lb",
-    grade: "Dry-aged 21d",
-    img: "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=900&q=80",
-  },
-];
+import { MARKET_PRODUCTS } from "@/data/site";
 
 export function FeaturedProducts() {
   return (
     <section
       id="shop"
-      className="texture-retail relative border-b border-wf-border bg-wf-cream py-20 sm:py-28"
+      className="texture-linen relative border-b border-stahl/30 bg-eichenbraun/25 py-16 sm:py-24"
+      aria-labelledby="shop-heading"
     >
       <div className="relative z-[1] mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="tc-reveal flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-wf-green">
-              The market
+            <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-mesquite">
+              Auswahl · Featured cuts
             </p>
-            <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-wf-text sm:text-4xl">
-              Featured cuts
+            <h2
+              id="shop-heading"
+              className="tc-section-title mt-2 font-display font-semibold text-kreide"
+            >
+              Butcher counter
             </h2>
-            <p className="mt-3 max-w-xl text-wf-muted">
-              A taste of what verified ranchers list on Town &amp; Cattle—rotated
-              seasonally with harvest windows.
+            <p className="mt-3 max-w-xl text-kreide/65">
+              Buy premium beef online—each card lists ranch origin, grade stamp,
+              and price per pound. Hand-labeled, digitally exact.
             </p>
           </div>
           <Link
             href="#contact"
-            className="shrink-0 text-sm font-semibold text-wf-green underline-offset-4 hover:underline"
+            className="tc-tap shrink-0 text-sm font-semibold text-mesquite underline-offset-4 hover:underline"
           >
-            Request inventory alerts →
+            Inventory alerts →
           </Link>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {products.map((p) => (
+        <div className="mt-12 grid grid-cols-1 gap-6 min-[480px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {MARKET_PRODUCTS.map((p) => (
             <article
-              key={p.name}
-              className="tc-product tc-reveal-card overflow-hidden rounded-2xl border border-wf-border bg-wf-bg"
+              key={p.sku}
+              itemScope
+              itemType="https://schema.org/Product"
+              className="tc-butcher-card tc-wax tc-reveal-card relative overflow-hidden rounded-sm border-2 border-kreide/15 bg-[#ebe4d4] shadow-md"
             >
-              <div className="relative aspect-square bg-wf-cream">
+              <meta itemProp="sku" content={p.sku} />
+              <meta itemProp="image" content={p.image} />
+              <div className="relative aspect-square bg-talgschwarz/10">
                 <Image
-                  src={p.img}
-                  alt={p.name}
+                  src={p.image}
+                  alt={`${p.name} — ${p.grade} beef from ${p.ranch}, buy beef direct from rancher`}
                   fill
+                  loading="lazy"
                   className="object-cover"
-                  sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
+                  sizes="(max-width:480px) 100vw, (max-width:1024px) 50vw, 25vw"
                 />
-                <span className="absolute right-3 top-3 rounded-full bg-wf-green px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
-                  {p.grade}
-                </span>
+                <div
+                  className="tc-wax-seal pointer-events-none absolute right-2 top-2 opacity-40"
+                  aria-hidden
+                >
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-dashed border-mesquite/80 text-[8px] font-bold uppercase leading-tight text-mesquite">
+                    TX
+                  </span>
+                </div>
               </div>
-              <div className="p-5">
-                <h3 className="font-display text-lg font-semibold text-wf-text">
+              <div className="border-t border-talgschwarz/10 p-4 sm:p-5">
+                <h3
+                  itemProp="name"
+                  className="font-display text-xl font-semibold text-talgschwarz"
+                >
                   {p.name}
                 </h3>
-                <p className="mt-1 text-xs text-wf-muted">{p.ranch}</p>
-                <div className="mt-4 flex items-center justify-between gap-2">
-                  <span className="font-mono text-sm font-semibold text-wf-green">
-                    {p.price}
+                <div className="mt-1 text-xs font-medium uppercase tracking-wider text-stahl">
+                  <span itemProp="brand" itemScope itemType="https://schema.org/Brand" className="sr-only">
+                    <span itemProp="name">Town &amp; Cattle</span>
                   </span>
+                  {p.ranch} ·{" "}
+                  <span className="rounded-sm bg-talgschwarz/10 px-1.5 py-0.5 text-[10px] text-talgschwarz">
+                    {p.grade}
+                  </span>
+                </div>
+                <p itemProp="description" className="sr-only">
+                  {p.description}
+                </p>
+                <div
+                  itemProp="offers"
+                  itemScope
+                  itemType="https://schema.org/Offer"
+                  className="mt-4 flex items-center justify-between gap-2"
+                >
+                  <meta itemProp="priceCurrency" content={p.priceCurrency} />
+                  <span
+                    itemProp="price"
+                    className="font-mono text-lg font-bold text-blutrot"
+                  >
+                    ${p.price}
+                    <span className="text-sm font-medium text-stahl">/lb</span>
+                  </span>
+                  <link itemProp="availability" href="https://schema.org/PreOrder" />
+                  <meta itemProp="priceValidUntil" content="2027-12-31" />
                   <button
                     type="button"
-                    className="rounded-full bg-wf-green px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white transition hover:bg-wf-green-dark"
+                    className="tc-tap rounded-sm bg-talgschwarz px-4 text-xs font-bold uppercase tracking-wide text-kreide"
+                    aria-label={`Add ${p.name} to cart`}
                   >
-                    Add to cart
+                    Add
                   </button>
                 </div>
-                <p className="mt-3 text-[11px] text-wf-muted">
-                  Checkout preview—cart connects when storefront launches.
+                <p className="mt-2 text-[10px] text-stahl">
+                  Checkout preview—cart when live.
                 </p>
               </div>
             </article>

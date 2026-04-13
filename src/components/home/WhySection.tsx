@@ -1,120 +1,66 @@
-const signals = [
+const values = [
   {
-    title: "Direct from ranch sourcing",
-    body: "Know where your beef was raised. We prioritize producers who document herd health, feed, and handling.",
-    icon: "ranch",
+    title: "Direct ranch trade",
+    body: "Short chain from pasture to pan—more margin for the ranch, more honesty for you.",
   },
   {
-    title: "No middleman markup",
-    body: "Competitive pricing by shortening the chain—more value to you and fair returns to the ranch.",
-    icon: "price",
+    title: "Graded & stamped",
+    body: "USDA and ranch stamps you can verify—not marketing adjectives.",
   },
   {
-    title: "Verified supplier network",
-    body: "Suppliers pass our onboarding and ongoing checks so you are not guessing at the label.",
-    icon: "shield",
+    title: "Fair unit economics",
+    body: "Prices reflect weight and grade, not aisle placement.",
   },
   {
-    title: "Grades & transparency",
-    body: "Quality markers, cut specs, and clear packaging—so you get what you paid for, every time.",
-    icon: "grade",
+    title: "Built to last",
+    body: "Centuries Mutual stewards the ledger—Beständigkeit over hype cycles.",
   },
 ];
-
-function Icon({ name }: { name: string }) {
-  const common = "h-7 w-7 text-wf-green";
-  switch (name) {
-    case "ranch":
-      return (
-        <svg className={common} fill="none" viewBox="0 0 32 32" aria-hidden>
-          <path
-            stroke="currentColor"
-            strokeWidth="1.5"
-            d="M4 24h24M8 24V14l4-4h8l4 4v10M12 10V8h8v2"
-          />
-          <path
-            stroke="currentColor"
-            strokeWidth="1.5"
-            d="M16 6v4M10 18h12"
-          />
-        </svg>
-      );
-    case "price":
-      return (
-        <svg className={common} fill="none" viewBox="0 0 32 32" aria-hidden>
-          <path
-            stroke="currentColor"
-            strokeWidth="1.5"
-            d="M16 4v24M20 8a4 4 0 00-8 0 4 4 0 008 0 4 4 0 00-8 0"
-          />
-        </svg>
-      );
-    case "shield":
-      return (
-        <svg className={common} fill="none" viewBox="0 0 32 32" aria-hidden>
-          <path
-            stroke="currentColor"
-            strokeWidth="1.5"
-            d="M16 4l10 4v8c0 6-4 10-10 12-6-2-10-6-10-12V8l10-4z"
-          />
-        </svg>
-      );
-    default:
-      return (
-        <svg className={common} fill="none" viewBox="0 0 32 32" aria-hidden>
-          <path
-            stroke="currentColor"
-            strokeWidth="1.5"
-            d="M6 26l6-8 4 4 6-10 4 6M6 10h6M10 6v8"
-          />
-        </svg>
-      );
-  }
-}
 
 export function WhySection() {
   return (
     <section
       id="why-us"
-      className="relative border-b border-wf-border bg-wf-sage py-20 sm:py-28"
+      className="relative border-b border-stahl/30 bg-talgschwarz py-16 sm:py-24"
+      aria-labelledby="why-heading"
     >
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.35]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='72' height='72' viewBox='0 0 72 72' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='1.5' fill='%23006241' fill-opacity='0.15'/%3E%3C/svg%3E")`,
-        }}
-      />
-      <div className="relative z-[1] mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="tc-reveal-wide mx-auto max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-wf-green">
-            Why not the grocery aisle?
-          </p>
-          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-wf-text sm:text-4xl">
-            Why Town &amp; Cattle
-          </h2>
-          <p className="mt-4 text-wf-muted">
-            Steakhouse quality with farmers-market honesty—without the retail
-            middle taking the first cut.
-          </p>
-        </div>
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <p className="text-center text-[10px] font-semibold uppercase tracking-[0.35em] text-mesquite">
+          Warum wir
+        </p>
+        <h2
+          id="why-heading"
+          className="tc-section-title mt-3 text-center font-display font-semibold text-kreide"
+        >
+          Why Town &amp; Cattle
+        </h2>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {signals.map((s) => (
-            <div
-              key={s.title}
-              className="tc-reveal-card rounded-2xl border border-wf-border bg-wf-bg p-6 shadow-sm"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-wf-green-soft">
-                <Icon name={s.icon} />
+        <div className="mt-12 grid gap-12 lg:grid-cols-2 lg:items-start">
+          <blockquote className="tc-reveal-wide border-l-4 border-mesquite pl-6">
+            <p className="font-display text-2xl font-medium italic leading-snug text-kreide sm:text-3xl">
+              &ldquo;We don&apos;t need another grocery story—we need a ledger
+              people trust and beef that proves it.&rdquo;
+            </p>
+            <footer className="mt-6 text-sm text-kreide/55">
+              — Hill Country ranch partner (name withheld)
+            </footer>
+          </blockquote>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {values.map((v) => (
+              <div
+                key={v.title}
+                className="tc-reveal-card rounded-sm border border-stahl/35 bg-eichenbraun/20 p-5"
+              >
+                <h3 className="font-display text-lg font-semibold text-kreide">
+                  {v.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-kreide/65">
+                  {v.body}
+                </p>
               </div>
-              <h3 className="mt-4 font-display text-lg font-semibold text-wf-text">
-                {s.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-wf-muted">
-                {s.body}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

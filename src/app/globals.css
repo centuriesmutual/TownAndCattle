@@ -1,30 +1,23 @@
 @import "tailwindcss";
 
-/* Inspired by premium natural grocery retail: white space, sage accents, forest green CTAs */
+/* German–Texas fusion: Talgschwarz, Eichenbraun, Mesquite Amber, Kreide, Blutrot, Stahl */
 :root {
-  --wf-bg: #ffffff;
-  --wf-cream: #f7f8f7;
-  --wf-sage: #eef4f1;
-  --wf-green: #006241;
-  --wf-green-dark: #004a32;
-  --wf-green-soft: #e3efe8;
-  --wf-text: #1a1a1a;
-  --wf-muted: #5c6560;
-  --wf-border: #d9dcd8;
-  --wf-border-light: #eceeeb;
+  --talgschwarz: #1a1410;
+  --eichenbraun: #5c3d1e;
+  --mesquite: #c17d3c;
+  --kreide: #f0ead6;
+  --blutrot: #8b1a1a;
+  --stahl: #4a4a4a;
+  --linen-noise: rgba(240, 234, 214, 0.03);
 }
 
 @theme inline {
-  --color-wf-bg: var(--wf-bg);
-  --color-wf-cream: var(--wf-cream);
-  --color-wf-sage: var(--wf-sage);
-  --color-wf-green: var(--wf-green);
-  --color-wf-green-dark: var(--wf-green-dark);
-  --color-wf-green-soft: var(--wf-green-soft);
-  --color-wf-text: var(--wf-text);
-  --color-wf-muted: var(--wf-muted);
-  --color-wf-border: var(--wf-border);
-  --color-wf-border-light: var(--wf-border-light);
+  --color-talgschwarz: var(--talgschwarz);
+  --color-eichenbraun: var(--eichenbraun);
+  --color-mesquite: var(--mesquite);
+  --color-kreide: var(--kreide);
+  --color-blutrot: var(--blutrot);
+  --color-stahl: var(--stahl);
   --font-sans: var(--font-sans);
 }
 
@@ -32,30 +25,124 @@
   font-family: var(--font-display), ui-serif, Georgia, serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .tc-body {
-  background: var(--wf-bg);
-  color: var(--wf-text);
+  background: var(--talgschwarz);
+  color: var(--kreide);
   font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 24rem) {
+  .tc-body {
+    font-size: 1rem;
+  }
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--wf-green) 22%, transparent);
-  color: var(--wf-text);
+  background: color-mix(in oklab, var(--mesquite) 35%, transparent);
+  color: var(--talgschwarz);
 }
 
-/* Very subtle paper texture (light retail) */
-.texture-retail {
+/* Dark linen / kraft noise */
+.texture-linen {
   position: relative;
 }
-.texture-retail::before {
+.texture-linen::before {
   content: "";
   pointer-events: none;
   position: absolute;
   inset: 0;
-  opacity: 0.04;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
+/* Ledger grid (Ordnung) */
+.ledger-grid {
+  background-image:
+    linear-gradient(
+      color-mix(in oklab, var(--stahl) 25%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--stahl) 20%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 24px 24px;
+}
+
+/* Scroll progress (Mission 2 + 3) */
+.scroll-progress-track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 3px;
+  background: color-mix(in oklab, var(--talgschwarz) 40%, transparent);
+  pointer-events: none;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--mesquite), color-mix(in oklab, var(--mesquite) 70%, white));
+  transform-origin: left center;
+  transform: scaleX(var(--scroll-p, 0));
+  will-change: transform;
+}
+
+/* Typography scale (Mission 2) */
+.tc-hero-title {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.tc-section-title {
+  font-size: clamp(1.5rem, 3.5vw, 2.75rem);
+  line-height: 1.12;
+}
+
+/* Tap targets ≥ 44px */
+.tc-tap {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Horizontal scroll smooth iOS */
+.tc-scroll-touch {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Wax seal pulse — hover-capable devices only */
+@keyframes wax-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tc-wax:hover .tc-wax-seal {
+    animation: wax-pulse 1.2s ease-in-out infinite;
+  }
+}
+
+/* Scroll reveals */
 @keyframes tc-reveal {
   from {
     opacity: 0;
@@ -74,13 +161,11 @@
       animation-timeline: view(block);
       animation-range: entry 0% entry 42%;
     }
-
     .tc-reveal-wide {
       animation: tc-reveal 0.95s cubic-bezier(0.22, 1, 0.36, 1) both;
       animation-timeline: view(block);
       animation-range: entry 5% entry 50%;
     }
-
     .tc-reveal-card:nth-child(1) {
       animation: tc-reveal 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
       animation-timeline: view(block);
@@ -112,22 +197,46 @@
   }
 }
 
-.tc-product {
+/* Butcher card lift */
+.tc-butcher-card {
   transition:
-    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.3s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
     border-color 0.25s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-}
-.tc-product:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 12px 28px rgba(0, 50, 35, 0.1),
-    0 0 0 1px color-mix(in oklab, var(--wf-green) 18%, transparent);
-  border-color: color-mix(in oklab, var(--wf-green) 28%, var(--wf-border));
 }
 
-.tc-product:focus-within {
-  outline: 2px solid var(--wf-green);
-  outline-offset: 2px;
+@media (hover: hover) and (pointer: fine) {
+  .tc-butcher-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* Mobile drawer */
+.tc-drawer-backdrop {
+  animation: fade-in 0.25s ease both;
+}
+
+.tc-drawer-panel {
+  animation: slide-down 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
