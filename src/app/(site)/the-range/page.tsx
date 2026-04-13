@@ -78,7 +78,7 @@ export default function TheRangePage() {
           </div>
           <div className="mt-14 flex flex-wrap justify-center gap-4">
             <Link
-              href="/#shop"
+              href="/commerce"
               className="tc-tap rounded-full bg-wf-green px-8 text-sm font-semibold text-white transition hover:bg-wf-green-hover"
             >
               Explore marketplace capabilities

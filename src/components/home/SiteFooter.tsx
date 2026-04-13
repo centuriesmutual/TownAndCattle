@@ -3,8 +3,9 @@ import Link from "next/link";
 const links = [
   { label: "The Ranch", href: "/the-ranch" },
   { label: "The Range", href: "/the-range" },
+  { label: "Ranchers", href: "/ranchers" },
   { label: "Our Township", href: "/our-township" },
-  { label: "Marketplace", href: "/#shop" },
+  { label: "Commerce", href: "/commerce" },
   { label: "Log in", href: "/login" },
   { label: "Create account", href: "/create-account" },
   { label: "Contact", href: "/#contact" },

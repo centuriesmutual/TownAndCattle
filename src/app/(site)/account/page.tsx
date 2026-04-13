@@ -100,7 +100,7 @@ export default async function AccountPage() {
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
           <Link
-            href="/#shop"
+            href="/commerce"
             className="tc-tap justify-center rounded-full bg-wf-green px-8 text-sm font-semibold text-white transition hover:bg-wf-green-hover"
           >
             Continue to shop

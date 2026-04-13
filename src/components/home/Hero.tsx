@@ -47,12 +47,12 @@ export function Hero() {
               per-pound pricing from verified Texas ranchers, not the middle aisle.
             </p>
             <div className="mt-10 flex w-full max-w-lg flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center">
-              <Link
-                href="#shop"
-                className="tc-tap w-full justify-center rounded-full bg-wf-green px-8 text-center text-sm font-semibold text-white shadow-md transition hover:bg-wf-green-hover sm:w-auto"
-              >
-                Shop premium cuts
-              </Link>
+            <Link
+              href="/commerce"
+              className="tc-tap w-full justify-center rounded-full bg-wf-green px-8 text-center text-sm font-semibold text-white shadow-md transition hover:bg-wf-green-hover sm:w-auto"
+            >
+              Shop premium cuts
+            </Link>
               <Link
                 href="/the-ranch"
                 className="tc-tap w-full justify-center rounded-full border-2 border-white/50 bg-white/10 px-8 text-center text-sm font-semibold text-white backdrop-blur-sm transition hover:border-white hover:bg-white/20 sm:w-auto"

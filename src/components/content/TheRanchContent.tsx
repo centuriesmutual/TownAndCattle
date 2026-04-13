@@ -60,7 +60,7 @@ export function TheRanchContent() {
 
       <div className="mt-12 flex flex-col items-stretch gap-4 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
         <Link
-          href="/#shop"
+          href="/commerce"
           className="tc-tap justify-center rounded-full bg-wf-green px-10 text-sm font-semibold text-white shadow-sm transition hover:bg-wf-green-hover"
         >
           Browse featured cuts

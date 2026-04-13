@@ -1,14 +1,12 @@
 import { AccountCtaSection } from "@/components/home/AccountCtaSection";
-import { FeaturedProducts } from "@/components/home/FeaturedProducts";
 import { Hero } from "@/components/home/Hero";
-import { RancherTeaser } from "@/components/home/RancherTeaser";
+import { HomeExploreSection } from "@/components/home/HomeExploreSection";
 
 export default async function HomePage() {
   return (
     <>
       <Hero />
-      <RancherTeaser />
-      <FeaturedProducts />
+      <HomeExploreSection />
       <AccountCtaSection />
     </>
   );
