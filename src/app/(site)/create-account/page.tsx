@@ -42,7 +42,7 @@ export default async function CreateAccountPage({
   const oauthReady = coinbaseOAuthReady();
 
   if (session.user?.profileCompletedAt) {
-    redirect("/account");
+    redirect("/market");
   }
 
   const showProfile = Boolean(session.user && !session.user.profileCompletedAt);

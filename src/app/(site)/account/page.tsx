@@ -100,10 +100,16 @@ export default async function AccountPage() {
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
           <Link
-            href="/commerce"
+            href="/market"
             className="tc-tap justify-center rounded-full bg-wf-green px-8 text-sm font-semibold text-white transition hover:bg-wf-green-hover"
           >
-            Continue to shop
+            Farmers market
+          </Link>
+          <Link
+            href="/commerce"
+            className="tc-tap justify-center rounded-full border-2 border-wf-border px-8 text-sm font-semibold text-wf-ink transition hover:border-wf-green"
+          >
+            Commerce &amp; settlement
           </Link>
           <form action="/api/auth/logout" method="post">
             <button

@@ -28,5 +28,5 @@ export async function completeAccountProfile(formData: FormData) {
   session.user.profileCompletedAt = new Date().toISOString();
   await session.save();
 
-  redirect("/account");
+  redirect("/market");
 }

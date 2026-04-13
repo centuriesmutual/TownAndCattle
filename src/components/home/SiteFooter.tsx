@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const links = [
   { label: "The Ranch", href: "/the-ranch" },
+  { label: "Farmers market", href: "/market" },
   { label: "The Range", href: "/the-range" },
   { label: "Ranchers", href: "/ranchers" },
   { label: "Our Township", href: "/our-township" },

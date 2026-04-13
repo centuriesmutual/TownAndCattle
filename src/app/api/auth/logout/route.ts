@@ -6,6 +6,6 @@ export async function POST() {
   const session = await getTcSession();
   session.destroy();
   return NextResponse.redirect(
-    new URL("/create-account?signed_out=1", getAppOrigin()).toString(),
+    new URL("/login?signed_out=1", getAppOrigin()).toString(),
   );
 }
