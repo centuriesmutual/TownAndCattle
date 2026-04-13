@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { coinbaseOAuthReady } from "@/lib/auth/coinbase";
 
+const benefits = [
+  "Shop verified ranch inventory with clear grades and pricing",
+  "Track orders and messages in one secure dashboard",
+  "Sign in with Coinbase when you want the fastest path to checkout",
+];
+
 /** Full-viewport section 4 — member access (homepage only). */
 export async function AccountCtaSection() {
   const oauthReady = coinbaseOAuthReady();
@@ -10,111 +16,82 @@ export async function AccountCtaSection() {
       className="flex min-h-[100dvh] w-full flex-col justify-center border-b border-wf-border bg-wf-sage py-16 sm:py-20"
       aria-labelledby="account-cta-heading"
     >
-      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="border border-wf-border bg-wf-white p-8 sm:p-10 lg:p-12">
+      <div className="mx-auto w-full max-w-2xl px-4 sm:px-6 lg:px-8">
+        <div className="border border-wf-border bg-wf-white px-8 py-12 text-center sm:px-12 sm:py-14">
           <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-wf-green">
-            Member access
+            Ready when you are
           </p>
           <h2
             id="account-cta-heading"
-            className="tc-section-title mt-3 font-display font-semibold text-wf-ink"
+            className="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-wf-ink sm:text-4xl"
           >
-            Create your Town &amp; Cattle account
+            Start buying and selling on Town &amp; Cattle
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-wf-muted sm:text-lg">
-            Sign in with Coinbase to align checkout, payouts, and identity in one
-            place. We use Coinbase App OAuth2 with{" "}
-            <strong className="font-semibold text-wf-ink">PKCE</strong>, store an
-            encrypted session cookie only (no access tokens in the browser), and
-            ask for a short fulfillment profile so we can route orders and
-            compliance notices correctly.
+          <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-wf-muted sm:text-lg">
+            Create a free account to unlock the marketplace, save your fulfillment
+            details, and stay in sync with the ranches you trust.
           </p>
 
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-            {[
-              "OAuth2 authorization via Coinbase (CDP-registered app)",
-              "Server-side token exchange; session sealed with iron-session",
-              "Profile capture: contact, ZIP, marketing & SMS preferences",
-              "Sign out revokes the sealed session cookie immediately",
-            ].map((item) => (
-              <li
-                key={item}
-                className="flex gap-3 rounded-md border border-wf-border bg-wf-cream px-4 py-3 text-sm text-wf-muted"
-              >
+          <ul className="mx-auto mt-10 max-w-md space-y-3 text-left text-sm leading-relaxed text-wf-ink sm:text-base">
+            {benefits.map((line) => (
+              <li key={line} className="flex gap-3">
                 <span
-                  className="mt-0.5 inline-block h-2 w-2 shrink-0 rounded-full bg-wf-green"
+                  className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-wf-green"
                   aria-hidden
                 />
-                {item}
+                <span>{line}</span>
               </li>
             ))}
           </ul>
 
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="mt-12 flex flex-col items-stretch gap-3 sm:items-center">
             {oauthReady ? (
-              <a
-                href="/api/auth/coinbase"
-                className="tc-tap justify-center rounded-md border border-wf-green bg-wf-green px-10 py-3 text-sm font-semibold text-white transition hover:bg-wf-green-hover"
-              >
-                Continue with Coinbase
-              </a>
+              <>
+                <a
+                  href="/api/auth/coinbase"
+                  className="tc-tap w-full justify-center rounded-md border border-wf-green bg-wf-green px-8 py-4 text-center text-base font-semibold text-white transition hover:bg-wf-green-hover sm:w-full sm:max-w-md"
+                >
+                  Sign in with Coinbase
+                </a>
+                <Link
+                  href="/create-account"
+                  className="tc-tap w-full justify-center rounded-md border-2 border-wf-border bg-wf-white px-8 py-3.5 text-center text-base font-semibold text-wf-ink transition hover:border-wf-green sm:w-full sm:max-w-md"
+                >
+                  Create account
+                </Link>
+              </>
             ) : (
-              <span className="tc-tap cursor-not-allowed justify-center rounded-md border border-wf-border bg-wf-cream px-10 py-3 text-sm font-semibold text-wf-muted">
-                Continue with Coinbase (configure OAuth)
-              </span>
+              <>
+                <Link
+                  href="/create-account"
+                  className="tc-tap w-full justify-center rounded-md border border-wf-green bg-wf-green px-8 py-4 text-center text-base font-semibold text-white transition hover:bg-wf-green-hover sm:w-full sm:max-w-md"
+                >
+                  Create account
+                </Link>
+                <Link
+                  href="/login"
+                  className="tc-tap w-full justify-center rounded-md border-2 border-wf-border bg-wf-white px-8 py-3.5 text-center text-base font-semibold text-wf-ink transition hover:border-wf-green sm:w-full sm:max-w-md"
+                >
+                  Log in
+                </Link>
+                <p className="mt-2 max-w-md text-sm text-wf-muted">
+                  One-tap Coinbase sign-in is not enabled on this deployment yet—you
+                  can still register and sign in here.
+                </p>
+              </>
             )}
-            <Link
-              href="/create-account"
-              className="tc-tap justify-center rounded-md border-2 border-wf-green bg-wf-white px-10 py-3 text-sm font-semibold text-wf-green transition hover:bg-wf-green/10"
-            >
-              Open full sign-up workflow
-            </Link>
-            <Link
-              href="/login"
-              className="tc-tap justify-center rounded-md border-2 border-wf-border bg-wf-white px-10 py-3 text-sm font-semibold text-wf-ink transition hover:border-wf-green"
-            >
-              Log in
-            </Link>
           </div>
 
-          {!oauthReady && (
-            <div className="mt-8 rounded-md border border-amber-200 bg-amber-50 p-5 text-sm text-amber-950">
-              <p className="font-semibold text-amber-950">
-                Production checklist — Coinbase CDP
-              </p>
-              <ol className="mt-3 list-decimal space-y-2 pl-5 text-amber-900/90">
-                <li>
-                  Create an OAuth2 client in Coinbase Developer Platform and set
-                  the redirect URI to{" "}
-                  <code className="rounded bg-white/80 px-1 py-0.5 text-xs">
-                    {"{NEXT_PUBLIC_APP_URL}/api/auth/coinbase/callback"}
-                  </code>
-                  .
-                </li>
-                <li>
-                  Add{" "}
-                  <code className="rounded bg-white/80 px-1 py-0.5 text-xs">
-                    COINBASE_CLIENT_ID
-                  </code>{" "}
-                  and{" "}
-                  <code className="rounded bg-white/80 px-1 py-0.5 text-xs">
-                    COINBASE_CLIENT_SECRET
-                  </code>{" "}
-                  to your environment (never commit secrets).
-                </li>
-                <li>
-                  Set{" "}
-                  <code className="rounded bg-white/80 px-1 py-0.5 text-xs">
-                    IRON_SESSION_PASSWORD
-                  </code>{" "}
-                  (32+ characters) and{" "}
-                  <code className="rounded bg-white/80 px-1 py-0.5 text-xs">
-                    NEXT_PUBLIC_APP_URL
-                  </code>{" "}
-                  to your public site origin.
-                </li>
-              </ol>
-            </div>
+          {oauthReady && (
+            <p className="mt-8 text-sm text-wf-muted">
+              Already have an account?{" "}
+              <Link
+                href="/login"
+                className="font-semibold text-wf-green underline-offset-4 hover:underline"
+              >
+                Log in
+              </Link>
+            </p>
           )}
         </div>
       </div>
