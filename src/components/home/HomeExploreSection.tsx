@@ -69,14 +69,14 @@ export function HomeCommerceFullSection() {
           Town &amp; Cattle uses Coinbase Commerce as the settlement layer between
           verified ranchers and buyers—fiat and digital assets, webhooks, and the
           audit posture a USDA supply chain deserves. Full diagrams and capability
-          detail on the commerce page.
+          detail on the marketplace.
         </p>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Link
-            href="/commerce"
+            href="/marketplace"
             className="tc-tap justify-center rounded-md border border-wf-green bg-wf-green px-10 py-3 text-sm font-semibold text-white transition hover:bg-wf-green-hover"
           >
-            View commerce &amp; settlement
+            Explore marketplace
           </Link>
         </div>
       </div>

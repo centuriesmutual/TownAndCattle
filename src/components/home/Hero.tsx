@@ -33,10 +33,10 @@ export function Hero() {
           </p>
           <div className="mt-10 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
-              href="/commerce"
+              href="/marketplace"
               className="tc-tap w-full justify-center rounded-md border border-wf-green bg-wf-green px-8 text-center text-sm font-semibold text-white transition hover:bg-wf-green-hover sm:w-auto"
             >
-              Shop premium cuts
+              Marketplace
             </Link>
             <Link
               href="/the-ranch"

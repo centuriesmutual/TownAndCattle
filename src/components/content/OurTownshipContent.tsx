@@ -109,7 +109,7 @@ export function OurTownshipContent() {
             </li>
             <li>
               <Link
-                href="/commerce"
+                href="/marketplace"
                 className="font-semibold text-wf-green hover:underline"
               >
                 Preview the shopper experience

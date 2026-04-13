@@ -262,10 +262,10 @@ export function FarmersMarketClient({ products }: { products: MarketProduct[] })
           ) : null}
 
           <Link
-            href="/commerce"
+            href="/marketplace"
             className="mt-6 block text-center text-xs font-semibold text-wf-green underline-offset-4 hover:underline"
           >
-            How Coinbase Commerce settles real orders →
+            How the marketplace settles orders →
           </Link>
         </div>
 

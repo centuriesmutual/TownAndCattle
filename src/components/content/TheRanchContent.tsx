@@ -202,7 +202,7 @@ export function TheRanchContent() {
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
-              href="/commerce"
+              href="/marketplace"
               className="tc-tap justify-center rounded-xl bg-wf-green px-10 py-3.5 text-sm font-semibold text-white transition hover:bg-wf-green-hover"
             >
               Commerce &amp; settlement

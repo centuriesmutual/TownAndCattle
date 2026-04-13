@@ -91,7 +91,7 @@ export function SiteJsonLd() {
           price: p.price,
           priceCurrency: p.priceCurrency,
           availability: "https://schema.org/PreOrder",
-          url: `${SITE_URL}/commerce`,
+          url: `${SITE_URL}/marketplace`,
         },
       },
     })),

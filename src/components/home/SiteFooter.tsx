@@ -6,7 +6,7 @@ const links = [
   { label: "The Range", href: "/the-range" },
   { label: "Ranchers", href: "/ranchers" },
   { label: "Our Township", href: "/our-township" },
-  { label: "Commerce", href: "/commerce" },
+  { label: "Marketplace", href: "/marketplace" },
   { label: "Log in", href: "/login" },
   { label: "Create account", href: "/create-account" },
   { label: "Contact", href: "/#contact" },

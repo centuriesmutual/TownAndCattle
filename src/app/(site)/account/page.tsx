@@ -106,10 +106,10 @@ export default async function AccountPage() {
             Farmers market
           </Link>
           <Link
-            href="/commerce"
+            href="/marketplace"
             className="tc-tap justify-center rounded-full border-2 border-wf-border px-8 text-sm font-semibold text-wf-ink transition hover:border-wf-green"
           >
-            Commerce &amp; settlement
+            Marketplace
           </Link>
           <form action="/api/auth/logout" method="post">
             <button
