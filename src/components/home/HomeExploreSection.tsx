@@ -106,8 +106,8 @@ export function HomeCommerceFullSection() {
       </div>
       <div className="relative order-1 min-h-[45vh] lg:order-2 lg:min-h-[100dvh]">
         <Image
-          src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=1600&q=80"
-          alt="Premium beef cuts—Coinbase Commerce marketplace at Town and Cattle"
+          src="https://images.unsplash.com/photo-1570042228871-70db89803b77?auto=format&fit=crop&w=1600&q=80"
+          alt="Cattle grazing—Coinbase Commerce marketplace at Town and Cattle"
           fill
           className="object-cover"
           sizes="(max-width:1024px) 100vw, 50vw"

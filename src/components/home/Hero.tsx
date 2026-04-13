@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { HERO_CARD_IMAGE_URL, HERO_IMAGE_URL } from "@/data/site";
+import { HERO_IMAGE_URL } from "@/data/site";
 
 /** Full-viewport hero — first full-page section on home. */
 export function Hero() {
@@ -51,37 +51,16 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="flex min-h-[55vh] flex-col bg-wf-white lg:min-h-[100dvh]">
-        <div className="relative min-h-[min(45vh,22rem)] flex-1 lg:min-h-0">
-          <Image
-            src={HERO_IMAGE_URL}
-            alt="USDA graded premium beef—Town and Cattle ranch-direct marketplace"
-            fill
-            priority
-            fetchPriority="high"
-            className="object-cover object-center"
-            sizes="(max-width:1024px) 100vw, 50vw"
-          />
-        </div>
-        <div className="grid shrink-0 border-t border-wf-border lg:grid-cols-2">
-          <div className="relative hidden min-h-[200px] border-wf-border lg:block lg:border-r">
-            <Image
-              src={HERO_CARD_IMAGE_URL}
-              alt="Premium raw beef cuts on butcher block—USDA graded selection"
-              fill
-              className="object-cover"
-              sizes="(max-width:1024px) 0px, 25vw"
-            />
-          </div>
-          <div className="bg-wf-sage px-6 py-6 sm:px-8">
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-wf-green">
-              Catalog preview
-            </p>
-            <p className="mt-2 font-display text-lg font-semibold text-wf-ink sm:text-xl">
-              Ranch-labeled · Grade-stamped · Per-pound clear
-            </p>
-          </div>
-        </div>
+      <div className="relative min-h-[55vh] w-full bg-wf-white lg:min-h-[100dvh]">
+        <Image
+          src={HERO_IMAGE_URL}
+          alt="Cattle on pasture—Town and Cattle ranch-direct marketplace"
+          fill
+          priority
+          fetchPriority="high"
+          className="object-cover object-center"
+          sizes="(max-width:1024px) 100vw, 50vw"
+        />
       </div>
     </section>
   );
