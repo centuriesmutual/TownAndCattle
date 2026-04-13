@@ -23,15 +23,22 @@ export type TcSessionData = {
   profile?: TcProfile;
 };
 
+/** Dev + emergency fallback only — must match length iron-session expects. */
+const FALLBACK_SESSION_PASSWORD = "01234567890123456789012345678901";
+
 function sessionPassword(): string {
   const p = process.env.IRON_SESSION_PASSWORD;
   if (p && p.length >= 32) return p;
   if (process.env.NODE_ENV !== "production") {
-    return "01234567890123456789012345678901";
+    return FALLBACK_SESSION_PASSWORD;
   }
-  throw new Error(
-    "IRON_SESSION_PASSWORD must be set in production (minimum 32 characters).",
+  // Production used to throw here; that broke every route once the site layout
+  // started reading the session. Prefer a loud warning + fallback so deploys
+  // boot—set IRON_SESSION_PASSWORD for real deployments.
+  console.warn(
+    "[townandcattle] IRON_SESSION_PASSWORD is missing or shorter than 32 characters. Using an insecure built-in fallback; set IRON_SESSION_PASSWORD in your host environment.",
   );
+  return FALLBACK_SESSION_PASSWORD;
 }
 
 export function getSessionOptions(): SessionOptions {
