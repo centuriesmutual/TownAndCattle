@@ -8,10 +8,6 @@ export function RanchersProgramIllustration() {
       aria-label="Diagram: USDA listings connect to settlement rails and demand intelligence, feeding the Town and Cattle partner network"
     >
       <defs>
-        <linearGradient id="rp-bg" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#e4f0eb" />
-          <stop offset="100%" stopColor="#f5f7f4" />
-        </linearGradient>
         <marker
           id="rp-arw"
           markerWidth="9"
@@ -23,7 +19,7 @@ export function RanchersProgramIllustration() {
           <path d="M0,0 L9,4.5 L0,9 Z" fill="#0f766e" />
         </marker>
       </defs>
-      <rect width="960" height="380" fill="url(#rp-bg)" rx="20" />
+      <rect width="960" height="380" fill="#f0f4f1" rx="20" />
 
       {/* USDA listing */}
       <g transform="translate(48,100)">

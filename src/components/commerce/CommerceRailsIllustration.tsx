@@ -8,10 +8,6 @@ export function CommerceRailsIllustration() {
       aria-label="Diagram: card and digital checkouts merge through Coinbase Commerce into ranch treasury reporting"
     >
       <defs>
-        <linearGradient id="cr-bg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#f5f7f4" />
-          <stop offset="100%" stopColor="#e4f0eb" />
-        </linearGradient>
         <marker
           id="cr-arw"
           markerWidth="8"
@@ -23,7 +19,7 @@ export function CommerceRailsIllustration() {
           <path d="M0,0 L8,4 L0,8 Z" fill="#0d3b30" />
         </marker>
       </defs>
-      <rect width="880" height="300" fill="url(#cr-bg)" rx="20" />
+      <rect width="880" height="300" fill="#f5f7f4" rx="20" />
 
       <g>
         <rect

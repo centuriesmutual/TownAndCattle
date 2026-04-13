@@ -4,13 +4,13 @@ import Link from "next/link";
 export function HomeExploreSection() {
   return (
     <section
-      className="w-full border-b border-wf-border bg-wf-sage/40 py-16 sm:py-24 lg:py-28"
+      className="w-full border-b border-wf-border bg-wf-white py-14 sm:py-20 lg:py-24"
       aria-label="Explore ranch program and commerce"
     >
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-10 lg:px-8">
         <article
           id="ranchers"
-          className="scroll-mt-28 overflow-hidden rounded-3xl border border-wf-border bg-wf-white shadow-sm"
+          className="scroll-mt-4 overflow-hidden rounded-md border border-wf-border bg-wf-white"
         >
           <div className="relative aspect-[21/9] sm:aspect-[2/1]">
             <Image
@@ -20,9 +20,8 @@ export function HomeExploreSection() {
               className="object-cover"
               sizes="(max-width:1024px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-wf-ink-deep/85 via-wf-ink-deep/25 to-transparent" />
           </div>
-          <div className="p-6 sm:p-8">
+          <div className="border-t border-wf-border bg-wf-cream p-6 sm:p-8">
             <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-wf-green">
               For ranchers &amp; packers
             </p>
@@ -35,7 +34,7 @@ export function HomeExploreSection() {
             </p>
             <Link
               href="/ranchers"
-              className="tc-tap mt-6 inline-flex rounded-full bg-wf-ink px-8 text-sm font-semibold text-white transition hover:bg-wf-ink-deep"
+              className="tc-tap mt-6 inline-flex rounded-md border border-wf-ink bg-wf-ink px-8 text-sm font-semibold text-white transition hover:bg-wf-ink-deep"
             >
               Open full page →
             </Link>
@@ -44,7 +43,7 @@ export function HomeExploreSection() {
 
         <article
           id="shop"
-          className="scroll-mt-28 overflow-hidden rounded-3xl border border-wf-border bg-wf-white shadow-sm"
+          className="scroll-mt-4 overflow-hidden rounded-md border border-wf-border bg-wf-white"
         >
           <div className="relative aspect-[21/9] sm:aspect-[2/1]">
             <Image
@@ -54,9 +53,8 @@ export function HomeExploreSection() {
               className="object-cover"
               sizes="(max-width:1024px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-wf-ink-deep/85 via-wf-ink-deep/25 to-transparent" />
           </div>
-          <div className="p-6 sm:p-8">
+          <div className="border-t border-wf-border bg-wf-cream p-6 sm:p-8">
             <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-wf-green">
               Coinbase Commerce · marketplace rails
             </p>
@@ -69,7 +67,7 @@ export function HomeExploreSection() {
             </p>
             <Link
               href="/commerce"
-              className="tc-tap mt-6 inline-flex rounded-full bg-wf-green px-8 text-sm font-semibold text-white transition hover:bg-wf-green-hover"
+              className="tc-tap mt-6 inline-flex rounded-md border border-wf-green bg-wf-green px-8 text-sm font-semibold text-white transition hover:bg-wf-green-hover"
             >
               Open full page →
             </Link>

@@ -88,11 +88,7 @@ html {
 .scroll-progress-bar {
   height: 100%;
   width: 100%;
-  background: linear-gradient(
-    90deg,
-    var(--wf-green),
-    var(--wf-green-hover)
-  );
+  background: var(--wf-green);
   transform-origin: left center;
   transform: scaleX(var(--scroll-p, 0));
   will-change: transform;

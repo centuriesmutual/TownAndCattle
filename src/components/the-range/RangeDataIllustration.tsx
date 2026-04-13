@@ -7,10 +7,6 @@ export function RangeDataIllustration() {
       aria-hidden
     >
       <defs>
-        <linearGradient id="range-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#0f766e" stopOpacity="0.2" />
-          <stop offset="100%" stopColor="#0d3b30" stopOpacity="0.06" />
-        </linearGradient>
         <marker
           id="range-arrow"
           markerWidth="8"
@@ -22,7 +18,7 @@ export function RangeDataIllustration() {
           <path d="M0,0 L8,4 L0,8 Z" fill="#0f766e" />
         </marker>
       </defs>
-      <rect width="800" height="420" fill="url(#range-bg)" rx="24" />
+      <rect width="800" height="420" fill="#eef4f0" rx="24" />
 
       <g transform="translate(80,120)">
         <rect
