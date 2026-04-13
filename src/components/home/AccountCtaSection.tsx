@@ -1,16 +1,17 @@
 import Link from "next/link";
 import { coinbaseOAuthReady } from "@/lib/auth/coinbase";
 
+/** Full-viewport section 4 — member access (homepage only). */
 export async function AccountCtaSection() {
   const oauthReady = coinbaseOAuthReady();
 
   return (
     <section
-      className="w-full border-b border-wf-border bg-wf-sage-deep/40 py-16 sm:py-20 lg:py-28"
+      className="flex min-h-[100dvh] w-full flex-col justify-center border-b border-wf-border bg-wf-sage py-16 sm:py-20"
       aria-labelledby="account-cta-heading"
     >
-      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-wf-border bg-wf-white p-8 shadow-sm sm:p-12 lg:p-14">
+      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="border border-wf-border bg-wf-white p-8 sm:p-10 lg:p-12">
           <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-wf-green">
             Member access
           </p>
@@ -20,7 +21,7 @@ export async function AccountCtaSection() {
           >
             Create your Town &amp; Cattle account
           </h2>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-wf-muted sm:text-lg">
+          <p className="mt-5 text-base leading-relaxed text-wf-muted sm:text-lg">
             Sign in with Coinbase to align checkout, payouts, and identity in one
             place. We use Coinbase App OAuth2 with{" "}
             <strong className="font-semibold text-wf-ink">PKCE</strong>, store an
@@ -29,7 +30,7 @@ export async function AccountCtaSection() {
             compliance notices correctly.
           </p>
 
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
             {[
               "OAuth2 authorization via Coinbase (CDP-registered app)",
               "Server-side token exchange; session sealed with iron-session",
@@ -38,7 +39,7 @@ export async function AccountCtaSection() {
             ].map((item) => (
               <li
                 key={item}
-                className="flex gap-3 rounded-2xl border border-wf-border bg-wf-cream/80 px-4 py-3 text-sm text-wf-muted"
+                className="flex gap-3 rounded-md border border-wf-border bg-wf-cream px-4 py-3 text-sm text-wf-muted"
               >
                 <span
                   className="mt-0.5 inline-block h-2 w-2 shrink-0 rounded-full bg-wf-green"
@@ -49,35 +50,35 @@ export async function AccountCtaSection() {
             ))}
           </ul>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             {oauthReady ? (
               <a
                 href="/api/auth/coinbase"
-                className="tc-tap justify-center rounded-full bg-wf-green px-10 text-sm font-semibold text-white shadow-sm transition hover:bg-wf-green-hover"
+                className="tc-tap justify-center rounded-md border border-wf-green bg-wf-green px-10 py-3 text-sm font-semibold text-white transition hover:bg-wf-green-hover"
               >
                 Continue with Coinbase
               </a>
             ) : (
-              <span className="tc-tap cursor-not-allowed justify-center rounded-full bg-wf-muted/30 px-10 text-sm font-semibold text-wf-muted">
+              <span className="tc-tap cursor-not-allowed justify-center rounded-md border border-wf-border bg-wf-cream px-10 py-3 text-sm font-semibold text-wf-muted">
                 Continue with Coinbase (configure OAuth)
               </span>
             )}
             <Link
               href="/create-account"
-              className="tc-tap justify-center rounded-full border-2 border-wf-green px-10 text-sm font-semibold text-wf-green transition hover:bg-wf-green/10"
+              className="tc-tap justify-center rounded-md border-2 border-wf-green bg-wf-white px-10 py-3 text-sm font-semibold text-wf-green transition hover:bg-wf-green/10"
             >
               Open full sign-up workflow
             </Link>
             <Link
               href="/login"
-              className="tc-tap justify-center rounded-full border-2 border-wf-border px-10 text-sm font-semibold text-wf-ink transition hover:border-wf-green"
+              className="tc-tap justify-center rounded-md border-2 border-wf-border bg-wf-white px-10 py-3 text-sm font-semibold text-wf-ink transition hover:border-wf-green"
             >
               Log in
             </Link>
           </div>
 
           {!oauthReady && (
-            <div className="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm text-amber-950">
+            <div className="mt-8 rounded-md border border-amber-200 bg-amber-50 p-5 text-sm text-amber-950">
               <p className="font-semibold text-amber-950">
                 Production checklist — Coinbase CDP
               </p>

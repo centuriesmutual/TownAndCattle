@@ -1,78 +1,118 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export function HomeExploreSection() {
+/** Full-viewport section 2 — ranchers & packers (homepage only). */
+export function HomeRanchersFullSection() {
   return (
     <section
-      className="w-full border-b border-wf-border bg-wf-white py-14 sm:py-20 lg:py-24"
-      aria-label="Explore ranch program and commerce"
+      id="ranchers"
+      className="grid min-h-[100dvh] w-full scroll-mt-0 grid-cols-1 border-b border-wf-border bg-wf-white lg:grid-cols-2"
+      aria-labelledby="home-ranchers-heading"
     >
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-10 lg:px-8">
-        <article
-          id="ranchers"
-          className="scroll-mt-4 overflow-hidden rounded-md border border-wf-border bg-wf-white"
+      <div className="relative min-h-[45vh] lg:min-h-[100dvh]">
+        <Image
+          src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1600&q=80"
+          alt="Cattle on Texas range—ranch and packer program at Town and Cattle"
+          fill
+          className="object-cover"
+          sizes="(max-width:1024px) 100vw, 50vw"
+          loading="lazy"
+        />
+      </div>
+      <div className="flex flex-col justify-center border-t border-wf-border bg-wf-cream px-6 py-16 sm:px-10 sm:py-20 lg:min-h-[100dvh] lg:border-l lg:border-t-0 lg:px-14 lg:py-24">
+        <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-wf-green">
+          For ranchers &amp; packers
+        </p>
+        <h2
+          id="home-ranchers-heading"
+          className="mt-4 font-display text-3xl font-semibold leading-tight text-wf-ink sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]"
         >
-          <div className="relative aspect-[21/9] sm:aspect-[2/1]">
-            <Image
-              src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1200&q=80"
-              alt="Cattle on Texas range—ranch and packer program at Town and Cattle"
-              fill
-              className="object-cover"
-              sizes="(max-width:1024px) 100vw, 50vw"
-            />
-          </div>
-          <div className="border-t border-wf-border bg-wf-cream p-6 sm:p-8">
-            <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-wf-green">
-              For ranchers &amp; packers
-            </p>
-            <h2 className="mt-2 font-display text-2xl font-semibold text-wf-ink sm:text-3xl">
-              Program overview &amp; illustrations
-            </h2>
-            <p className="mt-3 text-wf-muted">
-              USDA listings, Commerce settlement, demand intelligence, and FSIS-aligned
-              onboarding—full visual walkthrough on a dedicated page.
-            </p>
-            <Link
-              href="/ranchers"
-              className="tc-tap mt-6 inline-flex rounded-md border border-wf-ink bg-wf-ink px-8 text-sm font-semibold text-white transition hover:bg-wf-ink-deep"
-            >
-              Open full page →
-            </Link>
-          </div>
-        </article>
+          List USDA-graded beef with modern settlement and analytics.
+        </h2>
+        <p className="mt-6 max-w-xl text-base leading-relaxed text-wf-muted sm:text-lg">
+          Inventory, Coinbase Commerce, demand intelligence, and FSIS-aligned
+          onboarding—full diagrams and program copy on a dedicated page, or start
+          here and go deeper when you are ready.
+        </p>
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Link
+            href="/ranchers"
+            className="tc-tap justify-center rounded-md border border-wf-ink bg-wf-ink px-10 py-3 text-sm font-semibold text-white transition hover:bg-wf-ink-deep"
+          >
+            View program overview
+          </Link>
+          <Link
+            href="/our-township"
+            className="tc-tap justify-center rounded-md border-2 border-wf-border bg-wf-white px-10 py-3 text-sm font-semibold text-wf-ink transition hover:border-wf-green"
+          >
+            Our Township
+          </Link>
+          <Link
+            href="/#contact"
+            className="tc-tap justify-center py-3 text-sm font-semibold text-wf-green underline-offset-4 hover:underline"
+          >
+            Schedule an intro call
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-        <article
-          id="shop"
-          className="scroll-mt-4 overflow-hidden rounded-md border border-wf-border bg-wf-white"
+/** Full-viewport section 3 — commerce & settlement (homepage only). */
+export function HomeCommerceFullSection() {
+  return (
+    <section
+      id="shop"
+      className="grid min-h-[100dvh] w-full scroll-mt-0 grid-cols-1 border-b border-wf-border bg-wf-white lg:grid-cols-2"
+      aria-labelledby="home-commerce-heading"
+    >
+      <div className="order-2 flex flex-col justify-center border-t border-wf-border bg-wf-white px-6 py-16 sm:px-10 sm:py-20 lg:order-1 lg:min-h-[100dvh] lg:border-r lg:border-t-0 lg:px-14 lg:py-24">
+        <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-wf-green">
+          Coinbase Commerce · marketplace rails
+        </p>
+        <h2
+          id="home-commerce-heading"
+          className="mt-4 font-display text-3xl font-semibold leading-tight text-wf-ink sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]"
         >
-          <div className="relative aspect-[21/9] sm:aspect-[2/1]">
-            <Image
-              src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=1200&q=80"
-              alt="Premium beef cuts—Coinbase Commerce marketplace settlement at Town and Cattle"
-              fill
-              className="object-cover"
-              sizes="(max-width:1024px) 100vw, 50vw"
-            />
-          </div>
-          <div className="border-t border-wf-border bg-wf-cream p-6 sm:p-8">
-            <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-wf-green">
-              Coinbase Commerce · marketplace rails
-            </p>
-            <h2 className="mt-2 font-display text-2xl font-semibold text-wf-ink sm:text-3xl">
-              Payments &amp; settlement
-            </h2>
-            <p className="mt-3 text-wf-muted">
-              Dual rails, ranch treasury, fees, and programmatic order state—diagrams
-              and deep copy on a full production page.
-            </p>
-            <Link
-              href="/commerce"
-              className="tc-tap mt-6 inline-flex rounded-md border border-wf-green bg-wf-green px-8 text-sm font-semibold text-white transition hover:bg-wf-green-hover"
-            >
-              Open full page →
-            </Link>
-          </div>
-        </article>
+          Payments built for ranch economics.
+        </h2>
+        <p className="mt-6 max-w-xl text-base leading-relaxed text-wf-muted sm:text-lg">
+          Town &amp; Cattle uses Coinbase Commerce as the settlement layer between
+          verified ranchers and buyers—fiat and digital assets, webhooks, and the
+          audit posture a USDA supply chain deserves. Full diagrams and capability
+          detail on the commerce page.
+        </p>
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <Link
+            href="/commerce"
+            className="tc-tap justify-center rounded-md border border-wf-green bg-wf-green px-10 py-3 text-sm font-semibold text-white transition hover:bg-wf-green-hover"
+          >
+            View commerce &amp; settlement
+          </Link>
+          <Link
+            href="/login"
+            className="tc-tap justify-center rounded-md border-2 border-wf-border bg-wf-cream px-10 py-3 text-sm font-semibold text-wf-ink transition hover:border-wf-green"
+          >
+            Log in
+          </Link>
+          <Link
+            href="/create-account"
+            className="tc-tap justify-center py-3 text-sm font-semibold text-wf-green underline-offset-4 hover:underline"
+          >
+            Create account
+          </Link>
+        </div>
+      </div>
+      <div className="relative order-1 min-h-[45vh] lg:order-2 lg:min-h-[100dvh]">
+        <Image
+          src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=1600&q=80"
+          alt="Premium beef cuts—Coinbase Commerce marketplace at Town and Cattle"
+          fill
+          className="object-cover"
+          sizes="(max-width:1024px) 100vw, 50vw"
+          loading="lazy"
+        />
       </div>
     </section>
   );
