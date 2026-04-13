@@ -36,25 +36,25 @@ export function FeaturedProducts() {
   return (
     <section
       id="shop"
-      className="texture-leather relative border-b border-white/10 bg-leather py-20 sm:py-28"
+      className="texture-retail relative border-b border-wf-border bg-wf-cream py-20 sm:py-28"
     >
       <div className="relative z-[1] mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="tc-reveal flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-wf-green">
               The market
             </p>
-            <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+            <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-wf-text sm:text-4xl">
               Featured cuts
             </h2>
-            <p className="mt-3 max-w-xl text-ink/60">
-              A taste of what verified ranchers list on Town &amp; Cattle—rotate
-              seasonally based on herd and harvest windows.
+            <p className="mt-3 max-w-xl text-wf-muted">
+              A taste of what verified ranchers list on Town &amp; Cattle—rotated
+              seasonally with harvest windows.
             </p>
           </div>
           <Link
             href="#contact"
-            className="shrink-0 text-sm font-semibold text-amber underline-offset-4 hover:underline"
+            className="shrink-0 text-sm font-semibold text-wf-green underline-offset-4 hover:underline"
           >
             Request inventory alerts →
           </Link>
@@ -64,9 +64,9 @@ export function FeaturedProducts() {
           {products.map((p) => (
             <article
               key={p.name}
-              className="tc-product tc-reveal-card overflow-hidden rounded-2xl border border-white/10 bg-surface"
+              className="tc-product tc-reveal-card overflow-hidden rounded-2xl border border-wf-border bg-wf-bg"
             >
-              <div className="relative aspect-square">
+              <div className="relative aspect-square bg-wf-cream">
                 <Image
                   src={p.img}
                   alt={p.name}
@@ -74,27 +74,27 @@ export function FeaturedProducts() {
                   className="object-cover"
                   sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw"
                 />
-                <span className="absolute right-3 top-3 rounded-full bg-void/75 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-amber backdrop-blur-sm">
+                <span className="absolute right-3 top-3 rounded-full bg-wf-green px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
                   {p.grade}
                 </span>
               </div>
               <div className="p-5">
-                <h3 className="font-display text-lg font-semibold text-ink">
+                <h3 className="font-display text-lg font-semibold text-wf-text">
                   {p.name}
                 </h3>
-                <p className="mt-1 text-xs text-ink/50">{p.ranch}</p>
+                <p className="mt-1 text-xs text-wf-muted">{p.ranch}</p>
                 <div className="mt-4 flex items-center justify-between gap-2">
-                  <span className="font-mono text-sm font-semibold text-amber">
+                  <span className="font-mono text-sm font-semibold text-wf-green">
                     {p.price}
                   </span>
                   <button
                     type="button"
-                    className="rounded-md bg-amber px-4 py-2 text-xs font-bold uppercase tracking-wide text-void transition hover:bg-amber/90"
+                    className="rounded-full bg-wf-green px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white transition hover:bg-wf-green-dark"
                   >
                     Add to cart
                   </button>
                 </div>
-                <p className="mt-3 text-[11px] text-ink/40">
+                <p className="mt-3 text-[11px] text-wf-muted">
                   Checkout preview—cart connects when storefront launches.
                 </p>
               </div>

@@ -18,7 +18,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Homepage sections live in `src/components/home/` and are composed in `src/app/page.tsx`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) (Playfair Display + DM Sans) and remote images from Unsplash (`next.config.ts`).
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) (Source Serif 4 + Inter) and remote images from Unsplash (`next.config.ts`).
 
 ## Learn More
 

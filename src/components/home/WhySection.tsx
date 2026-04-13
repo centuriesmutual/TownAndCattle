@@ -22,7 +22,7 @@ const signals = [
 ];
 
 function Icon({ name }: { name: string }) {
-  const common = "h-8 w-8 text-amber";
+  const common = "h-7 w-7 text-wf-green";
   switch (name) {
     case "ranch":
       return (
@@ -76,25 +76,25 @@ export function WhySection() {
   return (
     <section
       id="why-us"
-      className="relative border-b border-white/10 bg-void py-20 sm:py-28"
+      className="relative border-b border-wf-border bg-wf-sage py-20 sm:py-28"
     >
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        className="pointer-events-none absolute inset-0 opacity-[0.35]"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4a24a' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='72' height='72' viewBox='0 0 72 72' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='1.5' fill='%23006241' fill-opacity='0.15'/%3E%3C/svg%3E")`,
         }}
       />
       <div className="relative z-[1] mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="tc-reveal-wide mx-auto max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-wf-green">
             Why not the grocery aisle?
           </p>
-          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-wf-text sm:text-4xl">
             Why Town &amp; Cattle
           </h2>
-          <p className="mt-4 text-ink/65">
-            We built this for people who want steakhouse quality with farmers-market
-            honesty—without the retail middle taking the first cut.
+          <p className="mt-4 text-wf-muted">
+            Steakhouse quality with farmers-market honesty—without the retail
+            middle taking the first cut.
           </p>
         </div>
 
@@ -102,15 +102,15 @@ export function WhySection() {
           {signals.map((s) => (
             <div
               key={s.title}
-              className="tc-reveal-card rounded-2xl border border-white/10 bg-elevated/80 p-6 backdrop-blur-sm"
+              className="tc-reveal-card rounded-2xl border border-wf-border bg-wf-bg p-6 shadow-sm"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-amber/10">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-wf-green-soft">
                 <Icon name={s.icon} />
               </div>
-              <h3 className="mt-4 font-display text-lg font-semibold text-ink">
+              <h3 className="mt-4 font-display text-lg font-semibold text-wf-text">
                 {s.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink/60">
+              <p className="mt-2 text-sm leading-relaxed text-wf-muted">
                 {s.body}
               </p>
             </div>

@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
-import { DM_Sans, Playfair_Display } from "next/font/google";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const sourceSerif = Source_Serif_4({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${dmSans.variable} h-full scroll-smooth antialiased`}
+      className={`${sourceSerif.variable} ${inter.variable} h-full scroll-smooth antialiased`}
     >
       <body className="tc-body flex min-h-full flex-col">
         {children}

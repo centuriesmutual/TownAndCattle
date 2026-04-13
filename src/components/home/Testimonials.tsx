@@ -21,13 +21,13 @@ const quotes = [
 
 export function Testimonials() {
   return (
-    <section className="relative border-b border-white/10 bg-elevated py-20 sm:py-28">
+    <section className="relative border-b border-wf-border bg-wf-sage py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="tc-reveal-wide text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-wf-green">
             Social proof
           </p>
-          <h2 className="mt-3 font-display text-3xl font-semibold text-ink sm:text-4xl">
+          <h2 className="mt-3 font-display text-3xl font-semibold text-wf-text sm:text-4xl">
             From the yard and the table
           </h2>
         </div>
@@ -36,15 +36,17 @@ export function Testimonials() {
           {quotes.map((q) => (
             <blockquote
               key={q.name}
-              className="tc-reveal-card rounded-2xl border border-white/10 bg-surface/80 p-8"
+              className="tc-reveal-card rounded-2xl border border-wf-border bg-wf-bg p-8 shadow-sm"
             >
-              <p className="font-display text-lg italic leading-snug text-ink/90">
+              <p className="font-display text-lg italic leading-snug text-wf-text">
                 &ldquo;{q.quote}&rdquo;
               </p>
-              <footer className="mt-6 border-t border-white/10 pt-4">
+              <footer className="mt-6 border-t border-wf-border-light pt-4">
                 <cite className="not-italic">
-                  <span className="block font-semibold text-ink">{q.name}</span>
-                  <span className="text-sm text-ink/50">{q.role}</span>
+                  <span className="block font-semibold text-wf-text">
+                    {q.name}
+                  </span>
+                  <span className="text-sm text-wf-muted">{q.role}</span>
                 </cite>
               </footer>
             </blockquote>
