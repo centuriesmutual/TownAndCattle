@@ -51,7 +51,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="relative min-h-[55vh] w-full bg-wf-white lg:min-h-[100dvh]">
+      <div className="relative h-[min(55vh,32rem)] min-h-[280px] w-full min-w-0 bg-wf-white lg:h-full lg:min-h-[100dvh]">
         <Image
           src={HERO_IMAGE_URL}
           alt="Cattle on pasture—Town and Cattle ranch-direct marketplace"

@@ -3,11 +3,11 @@ export const SITE_URL = "https://townandcattle.com";
 
 /** 1200×630 crop for Open Graph / Twitter — cattle on pasture */
 export const OG_IMAGE_URL =
-  "https://images.unsplash.com/photo-1465146344425-f00d818facd8?auto=format&fit=crop&w=1200&h=630&q=88";
+  "https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=1200&h=630&q=88";
 
 /** Hero: cattle on pasture (homepage imagery) */
 export const HERO_IMAGE_URL =
-  "https://images.unsplash.com/photo-1465146344425-f00d818facd8?auto=format&fit=crop&w=2400&q=88";
+  "https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=2400&q=88";
 
 export type MarketProduct = {
   name: string;

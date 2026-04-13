@@ -9,7 +9,7 @@ export function HomeRanchersFullSection() {
       className="grid min-h-[100dvh] w-full scroll-mt-0 grid-cols-1 border-b border-wf-border bg-wf-white lg:grid-cols-2"
       aria-labelledby="home-ranchers-heading"
     >
-      <div className="relative min-h-[45vh] lg:min-h-[100dvh]">
+      <div className="relative h-[min(45vh,28rem)] min-h-[240px] w-full min-w-0 lg:h-full lg:min-h-[100dvh]">
         <Image
           src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1600&q=80"
           alt="Cattle on Texas range—ranch and packer program at Town and Cattle"
@@ -104,9 +104,9 @@ export function HomeCommerceFullSection() {
           </Link>
         </div>
       </div>
-      <div className="relative order-1 min-h-[45vh] lg:order-2 lg:min-h-[100dvh]">
+      <div className="relative order-1 h-[min(45vh,28rem)] min-h-[240px] w-full min-w-0 lg:order-2 lg:h-full lg:min-h-[100dvh]">
         <Image
-          src="https://images.unsplash.com/photo-1570042228871-70db89803b77?auto=format&fit=crop&w=1600&q=80"
+          src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1600&q=80"
           alt="Cattle grazing—Coinbase Commerce marketplace at Town and Cattle"
           fill
           className="object-cover"
